@@ -1,4 +1,7 @@
-<h1>Restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-  <h6><%= restaurant.name %> / <%= restaurant.cuisine %> / <%= restaurant.address %> / <%= restaurant.website %> / <%= restaurant.phone_number %></h6>
-  <% end %>
+<div class="restaurant-index-page">
+  <h1>Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+    <%= cl_image_tag("ginger-roma_wqkel5", width: 900, height: 300, crop: :fill) %>
+    <%= restaurant.name %> / <%= restaurant.cuisine %> / <%= restaurant.address %> / <%= restaurant.website %> / <%= restaurant.phone_number %>
+    <% end %>
+</div>
