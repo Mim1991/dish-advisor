@@ -11,6 +11,7 @@
       </div>
       <div>
         <p><%= dish.reviews %></p>
+        <%= link_to "Add review", new_dish_review_path(dish) %>
       </div>
     </div>
   <% end %>
