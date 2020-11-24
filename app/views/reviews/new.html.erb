@@ -1,5 +1,5 @@
 <!-- simple form to create a review for a dish -->
-<% simple_form_for [@dish, @review] do |f| %>
+<%= simple_form_for [@dish, @review] do |f| %>
   <%= f.input :title %>
   <%= f.input :content %>
   <%= f.input :rating, collection: 0..5 %>
