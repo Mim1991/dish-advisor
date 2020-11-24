@@ -1,0 +1,17 @@
+<p><%= @restaurant.name %> </p>
+
+<div class="restaurant-dish-grid">
+  <% @restaurant.dishes.each do |dish| %>
+    <div class="dish-card">
+      <div>
+        <h2><%= dish.name %></h2>
+      </div>
+      <div>
+        <p><%= dish.description %></p>
+      </div>
+      <div>
+        <p><%= dish.reviews %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
