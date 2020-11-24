@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
       redirect_to dish_path(@dish)
     else
       render new
+    end
   end
 
   private
