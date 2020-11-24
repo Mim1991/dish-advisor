@@ -1,6 +1,33 @@
 .dish-card {
-  width: 95%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px 0px;
+  border-bottom: 1px solid $my-green;
+  padding: 16px 0px;
+}
+
+.bar-container {
+  width: 80%;
+  height: 10%;
+  border: 1px solid grey;
+}
+
+.dish-description{
+  text-align: center;
+}
+
+.dish-rating-icons p{
+ font-size: 37px;
+ padding-bottom: 0px;
+ margin-bottom: 0px;
+}
+
+#rating-padding {
+  margin-bottom:0px;
+}
+
+.dish-card h2 {
+  padding-bottom: 10px;
 }
