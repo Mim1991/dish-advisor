@@ -1,0 +1,34 @@
+body {
+  background-color: $background;
+}
+
+#new_review {
+  margin: 30px 20px;
+}
+
+.review-container {
+  text-align: center;
+  margin: 50px 20px;
+  font-family: $form-font;
+  color: $my-green;
+
+}
+
+#review_title, #review_content, #review_rating, #review_visit_date {
+  border-bottom: 1px solid $my-pink;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+#review_title:focus, #review_content:focus, #review_rating:focus, #review_visit_date:focus {
+  border-bottom: 1px solid $my-green;
+  box-shadow: none;
+}
+
+#form-button {
+  margin-top: 20px;
+}
