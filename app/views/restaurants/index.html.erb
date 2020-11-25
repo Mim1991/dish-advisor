@@ -1,26 +1,30 @@
 <div class="restaurant-index-page">
   <h1>Restaurants</h1>
-  <% @restaurants.each do |restaurant| %>
-    <%= link_to restaurant_path(restaurant) do %>
-      <div class="restaurant-card">
-        <div class="restaurant-image">
-          <%= cl_image_tag("ginger-roma_wqkel5") %>
-        </div>
-        <div class="restaurant-data">
-          <div class="restaurant-name">
-            <%= restaurant.name %>
-          </div>
-          <div class="restaurant-cuisine">
-            <%= restaurant.cuisine %>
+  <% if @restaurants.empty? %>
+    <p>Your search does not return a valid result</p>
+  <% else %>
+    <% @restaurants.each do |restaurant| %>
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="restaurant-card">
+          <div class="restaurant-image">
+            <%= cl_image_tag("ginger-roma_wqkel5") %>
           </div>
           <div class="restaurant-data">
-            <li><%= restaurant.address %> / <%= restaurant.phone_number %></li>
-            <li><%= restaurant.website %></li>
+            <div class="restaurant-name">
+              <%= restaurant.name %>
+            </div>
+            <div class="restaurant-cuisine">
+              <%= restaurant.cuisine %>
+            </div>
+            <div class="restaurant-data">
+              <li><%= restaurant.address %> / <%= restaurant.phone_number %></li>
+              <li><%= restaurant.website %></li>
+            </div>
           </div>
         </div>
+      <% end %>
+      <div class="border">
       </div>
-    <% end %>
-    <div class="border">
-    </div>
-    <% end %>
+      <% end %>
+  <% end %>
 </div>
