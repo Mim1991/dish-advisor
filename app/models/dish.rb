@@ -12,6 +12,7 @@ class Dish < ApplicationRecord
       prefix: true }
   }
 
+  multisearchable against: [:name, :description, :allergen]
   # pg_search_scope :search_by_restaurant_dish,
   #   against: [:name, :description, :allergen],
   # associated_against: { restaurant:

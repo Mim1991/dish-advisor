@@ -4,8 +4,8 @@
   <%= form_tag restaurants_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
-    class: "form_control form-search form-search-colour", id: "form-search-home",
-    placeholder: "Search for restaurant..."
+    class: "form_control form-search form-search-colour", id: "form-button-search",
+    placeholder: "Search for..."
     %>
     <%= submit_tag "Search Restaurant", class: "btn-search-home" %>
   <% end %>
@@ -15,8 +15,8 @@
   <%= form_tag dishes_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
-    class: "form_control form-search form-search-colour", id: "form-search-home",
-    placeholder: "Search for dish..."
+    class: "form_control form-search form-search-colour", id: "form-button-search",
+    placeholder: "Search for..."
     %>
     <%= submit_tag "Search Dish", class: "btn-search-home" %>
   <% end %>
