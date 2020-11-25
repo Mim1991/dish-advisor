@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show, :index]
 
-  resources :dishes, only: [:show] do
+  resources :dishes, only: [:index, :show] do
     resources :favourites, only: [:create]
     resources :reviews, only: [:new, :create]
   end

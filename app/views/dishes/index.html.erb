@@ -1,0 +1,27 @@
+<div class="dishes-index-page">
+  <h1>Dishes</h1>
+  <% if @dishes.empty? %>
+    <p>Your search does not return a valid result, explore our best dishes</p>
+  <% else %>
+    <% @dishes.each do |dish| %>
+      <%= link_to dish_path(dish) do %>
+        <div class="dishes-card">
+          <div class="dish-data">
+            <div class="dish-name">
+              <%= dish.name %> at <%= dish.restaurant.name %>
+            </div>
+            <div class="dish-allergen">
+              <%= dish.allergen %>
+            </div>
+            <div class="dish-data">
+              <li><%= dish.description %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="border">
+      </div>
+      <% end %>
+  <% end %>
+</div>
+

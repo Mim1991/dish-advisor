@@ -8,4 +8,12 @@ class Restaurant < ApplicationRecord
     tsearch: {
       prefix: true } }
 
+  # pg_search_scope :search_by_restaurant_dish,
+  #   against: [:name, :cuisine, :address],
+  # associated_against: { dish:
+  #   [:name, :description, :allergen]},
+  #   using: {
+  #     tsearch:{
+  #       prefix: true }
+  # }
 end
