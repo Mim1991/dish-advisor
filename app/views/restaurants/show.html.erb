@@ -29,9 +29,110 @@
         <%= link_to "Add review", new_dish_review_path(dish) %>
     </div>
     <!-- Modal -->
-    <div class="modal-box">
-      <h2><%= dish.name %></h2>
-
+    <div class="modal-box-total">
+      <div class="modal-box">
+        <div class="rating-overview">
+          <h5><%= dish.name %></h5>
+          <p><%= dish.description %></p>
+        </div>
+        <div class="rating-content-scores">
+          <div>
+            <h5>Total Reviews: <%= dish.reviews.count %></h5>
+          </div>
+          <div class="stars-container">
+            <div class="number-stars">
+              <p>5</p>
+              <div class="bar-container">
+                <div class="bar-colour"></div>
+              </div>
+              <div class="rating-count-star">
+                <% five_array = [] %>
+                <% dish.reviews.each do |review|  %>
+                  <% if review.rating == 5  %>
+                    <% five_array << review %>
+                  <% end %>
+                <% end %>
+                <%= five_array.count %>
+              </div>
+            </div>
+            <div class="number-stars">
+              <p>4</p>
+              <div class="bar-container">
+                <div class="bar-colour"></div>
+              </div>
+              <div class="rating-count-star">
+                <% four_array = [] %>
+                <% dish.reviews.each do |review|  %>
+                  <% if review.rating == 4  %>
+                    <% four_array << review %>
+                  <% end %>
+                <% end %>
+                <%= four_array.count %>
+              </div>
+            </div>
+            <div class="number-stars">
+              <p>3</p>
+              <div class="bar-container">
+                <div class="bar-colour"></div>
+              </div>
+              <div class="rating-count-star">
+                <% three_array = [] %>
+                <% dish.reviews.each do |review|  %>
+                  <% if review.rating == 3  %>
+                    <% three_array << review %>
+                  <% end %>
+                <% end %>
+                <%= three_array.count %>
+              </div>
+            </div>
+            <div class="number-stars">
+              <p>2</p>
+              <div class="bar-container">
+                <div class="bar-colour"></div>
+              </div>
+              <div class="rating-count-star">
+                <% two_array = [] %>
+                <% dish.reviews.each do |review|  %>
+                  <% if review.rating == 2  %>
+                    <% two_array << review %>
+                  <% end %>
+                <% end %>
+                <%= two_array.count %>
+              </div>
+            </div>
+            <div class="number-stars">
+              <p>1</p>
+              <div class="bar-container">
+                <div class="bar-colour"></div>
+              </div>
+              <div class="rating-count-star">
+                <% one_array = [] %>
+                <% dish.reviews.each do |review|  %>
+                  <% if review.rating == 1  %>
+                    <% one_array << review %>
+                  <% end %>
+                <% end %>
+                <%= one_array.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="individual-review">
+          <div class="individual-review-heading">
+            <div class="individual-review-title">
+              <h5><%= dish.reviews.last %></h5>
+            </div>
+            <div class="individual-review-details">
+              <p>5</p>
+              <p>British</p>
+              <p>10th March</p>
+            </div>
+          </div>
+          <div class="individual-review-body">
+            <p><%= dish.reviews.last %></p>
+          </div>
+        </div>
+      </div>
     </div>
   <!-- end of modal -->
   </div>

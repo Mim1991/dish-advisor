@@ -1,14 +1,69 @@
-.modal-box {
-  width: 100px;
-  height: 100px;
+.modal-box-total {
   border: 1px solid grey;
   position: fixed;
   display: none;
   width: 90%;
-  height: 90%;
   top: 0;
   z-index: 2;
   background-color: white;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rating-content-scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.rating-content-scores p{
+  margin-bottom: 0px;
+}
+
+.stars-container {
+  width: 100%;
+}
+
+.number-stars {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+}
+
+.number-stars p {
+  padding: 0px 10px;
+  width: 10%;
+}
+
+.bar-container {
+ border-top-right-radius: 20px;
+ border-bottom-right-radius: 20px;
+}
+
+.bar-colour{
+ background-color: yellow;
+ border-top-right-radius: 20px;
+ border-bottom-right-radius: 20px;
+ width: 70%;
+ height: 16px;
+}
+
+.score-chart {
+  height: 100%;
+  width: 100%;
 }
 
 .display-block {
