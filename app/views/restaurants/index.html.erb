@@ -1,7 +1,7 @@
 <div class="restaurant-index-page">
   <h1>Restaurants</h1>
   <% if @restaurants.empty? %>
-    <p>Your search does not return a valid result</p>
+    <p>Your search does not return a valid result, explore our best restaurants</p>
   <% else %>
     <% @restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
