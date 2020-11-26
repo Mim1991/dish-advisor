@@ -3,6 +3,11 @@
   <% if @restaurants.empty? %>
     <p>Your search does not return a valid result, explore our best restaurants</p>
   <% else %>
+    <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
     <% @restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
         <div class="restaurant-card">
@@ -34,4 +39,5 @@
       </div>
       <% end %>
   <% end %>
+ </div>
 </div>
