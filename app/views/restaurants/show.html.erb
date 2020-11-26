@@ -30,11 +30,10 @@
     </div>
     <div class="dish-review-link">
         <%= link_to "Add review", new_dish_review_path(dish) %>
-        <%= link_to "Add to favourites", dish_favourites_path(dish), method: :post, remote:true %>
     </div>
     <!-- Modal -->
     <div class="screen-overlay">
-      <div class="modal-box-total">
+      <div class="modal-box-total modal-box-border">
         <div class="modal-box">
           <div class="rating-overview">
             <h5><%= dish.name %></h5>
@@ -45,11 +44,11 @@
               <h5>No Reviews Yet!</h5>
             <% else %>
             <div class="review-heading">
-              <h5>Total Reviews: <span id="review-count-select"><%= dish.reviews.count %></span></h5>
+              <h5>Reviews (<span id="review-count-select"><%= dish.reviews.count %></span>)</h5>
             </div>
             <div class="stars-container">
               <div class="number-stars">
-                <p>5</p>
+                <p>5 🍴</p>
                 <div class="bar-container">
                   <div class="bar-colour" id="five-colour"></div>
                 </div>
@@ -64,7 +63,7 @@
                 </div>
               </div>
               <div class="number-stars">
-                <p>4</p>
+                <p>4 🍴</p>
                 <div class="bar-container">
                   <div class="bar-colour" id="four-colour"></div>
                 </div>
@@ -79,7 +78,7 @@
                 </div>
               </div>
               <div class="number-stars">
-                <p>3</p>
+                <p>3 🍴</p>
                 <div class="bar-container">
                   <div class="bar-colour" id="three-colour"></div>
                 </div>
@@ -94,7 +93,7 @@
                 </div>
               </div>
               <div class="number-stars">
-                <p>2</p>
+                <p>2 🍴</p>
                 <div class="bar-container">
                   <div class="bar-colour" id="two-colour"></div>
                 </div>
@@ -109,7 +108,7 @@
                 </div>
               </div>
               <div class="number-stars">
-                <p>1</p>
+                <p>1 🍴</p>
                 <div class="bar-container">
                   <div class="bar-colour" id="one-colour"></div>
                 </div>
@@ -127,20 +126,37 @@
           <% end %>
           </div>
 
-          <div class="individual-review">
-            <div class="individual-review-heading">
-              <div class="individual-review-title">
-                <h5><%= dish.reviews.last %></h5>
+          <div class="review-list">
+            <% dish.reviews.each do |review| %>
+              <div class="individual-review">
+              <div class="review-user">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+                <p class="review-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
+                <p class="review-nationality"><%= review.user.nationality %></p>
               </div>
-              <div class="individual-review-details">
-                <p>5</p>
-                <p>British</p>
-                <p>10th March</p>
+              <div class="review-body">
+                <div class="star-visit">
+                  <p class="review-rating"><%= "🍴" * review.rating.to_i %></p>
+                  <% if ((Date.today - review.visit_date).to_i) == 1 %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> day since visit </p>
+                  <% elsif ((Date.today - review.visit_date).to_i / 7) < 1 %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> days since visit </p>
+                  <% else %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i / 7 %> weeks since visit </p>
+                  <% end %>
+                </div>
+                <h3><%= review.title%></h3>
+                <p class="review-content"><%= review.content %></p>
+                <p class="review-visit"><span>Date of Visit:</span> <%= review.visit_date.strftime("%b %d, %Y") %></p>
               </div>
             </div>
-            <div class="individual-review-body">
-              <p><%= dish.reviews.last %></p>
-            </div>
+            <% end %>
+          </div>
+
+
+
+          <div class="fave-button">
+            <%= link_to "Add to favourites", dish_favourites_path(dish), method: :post, remote:true %>
           </div>
         </div>
       </div>
