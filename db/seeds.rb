@@ -15,7 +15,8 @@ puts "Creating some restaurants"
       name: Faker::Food.dish,
       description: Faker::Food.description,
       allergen: ['Gluten', 'Eggs', 'Nuts', 'Shellfish', 'Soya'].sample,
-      restaurant: restaurant
+      restaurant: restaurant,
+      dish_type: ['Starter', 'Main', 'Dessert', 'Drink'].sample
     )
     dish.save!
     puts "and a dish"

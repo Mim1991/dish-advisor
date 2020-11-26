@@ -4,16 +4,25 @@
 }
 
 .tabs-underlined .tab-underlined {
-  color: black;
+  font-family: $headers-font;
+  color: $my-yellow;
   padding: 8px;
   margin: 8px 16px;
   opacity: .4;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 4px solid transparent;
 }
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 2px solid $my-yellow;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: $my-green;
+  width: 100vw;
+  padding-top: 10px;
+
 }

@@ -1,20 +1,36 @@
-<ul class="list-inline tabs-underlined">
-  <li>
-    <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined" %>
-  </li>
-  <li>
-    <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
-  </li>
-</ul>
+<div class="tabs">
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined" %>
+    </li>
+    <li>
+      <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
+    </li>
+  </ul>
+</div>
+
 <div class="dashboard">
-  <div class="user-reviews">
+  <div class="profile-banner">
+    <h4 class="heading">HELLO <%= current_user.first_name.upcase %>!</h4>
     <h6 class="sub-heading">RECENT REVIEWS</h6>
+  </div>
+  <div class="user-favourites">
     <div class="row" id="dashboard-row">
       <% @user_reviews.each do |review| %>
       <div class="col-sm-12">
         <div class="dashboard-card">
-          <div class="dashboard-infos">
-            <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <%= review.rating %></h6>
+          <div class="dashboard-infos" id="review-info">
+            <% if review.rating == 1 %>
+              <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <i class="fas fa-star"></i></h6>
+            <% elsif review.rating == 2 %>
+              <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i></h6>
+            <% elsif review.rating == 3 %>
+              <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></h6>
+            <% elsif review.rating == 4 %>
+              <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></h6>
+            <% elsif review.rating == 5 %>
+              <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></h6>
+            <% end %>
             <p><%= review.content %></p>
           </div>
         </div>
