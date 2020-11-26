@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :dishes
+  has_many :dishes, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_cuisine_address,

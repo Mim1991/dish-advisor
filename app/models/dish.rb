@@ -1,7 +1,7 @@
 class Dish < ApplicationRecord
   belongs_to :restaurant
-  has_many :reviews
-  has_many :favourites
+  has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_description_allergen,
