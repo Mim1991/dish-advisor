@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'profile', action: :show, controller: 'users'
+  resources :users, only: [:index] do
+    resources :reviews, only: [:index]
+    resources :favourites, only: [:index]
+  end
 
   resources :restaurants, only: [:show, :index]
-  
+
   resources :favourites, only: [:destroy]
 
  resources :dishes, only: [:index, :show] do
