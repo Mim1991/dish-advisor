@@ -1,0 +1,25 @@
+<ul class="list-inline tabs-underlined">
+  <li>
+    <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined" %>
+  </li>
+  <li>
+    <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
+  </li>
+</ul>
+<div class="dashboard">
+  <div class="user-reviews">
+    <h6 class="sub-heading">RECENT REVIEWS</h6>
+    <div class="row" id="dashboard-row">
+      <% @user_reviews.each do |review| %>
+      <div class="col-sm-12">
+        <div class="dashboard-card">
+          <div class="dashboard-infos">
+            <h6><%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id) %> | <%= review.rating %></h6>
+            <p><%= review.content %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,9 @@
 class FavouritesController < ApplicationController
   def index
-    @favourites = Favourite.order(created_at: :asc)
+    @favourites = Favourite.all
+    @favourite_dishes = current_user.favourites.order(created_at: :desc)
   end
+
   def create
     @dish = Dish.find(params[:dish_id])
     @favourite = Favourite.new
