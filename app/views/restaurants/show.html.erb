@@ -33,9 +33,14 @@
     </div>
     <!-- Modal -->
     <div class="screen-overlay">
+    </div>
       <div class="modal-box-total modal-box-border">
         <div class="modal-box">
+
           <div class="rating-overview text-center">
+            <div class="close-modal">
+              <h1>X</h1>
+            </div>
             <h5 class="dish-name-popup"><%= dish.name.upcase %></h5>
             <p class="dish-description-popup"><%= dish.description %></p>
           </div>
@@ -156,13 +161,21 @@
           </div>
           <div class="margin-bottom-pad"></div>
 
-
           <div class="fave-button">
-            <%= link_to "FAVOURITE", dish_favourites_path(dish), method: :post, remote:true %>
+            <% dish_array = [] %>
+            <% @favourite_dishes.each do |favourite| %>
+              <% dish_array << favourite.dish.id %>
+            <% end %>
+            <% if dish_array.include? dish.id %>
+              <p class="black">ADDED TO FAVOURITES</p>
+
+            <% else %>
+              <%= link_to "FAVOURITE", dish_favourites_path(dish), class: "link-select" ,method: :post, remote:true %>
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
+
   <!-- end of modal -->
   </div>
   <% end %>
