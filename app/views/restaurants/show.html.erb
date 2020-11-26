@@ -30,6 +30,7 @@
     </div>
     <div class="dish-review-link">
         <%= link_to "Add review", new_dish_review_path(dish) %>
+        <%= link_to "Add to favourites", dish_favourites_path(dish), method: :post, remote:true %>
     </div>
   </div>
   <% end %>
