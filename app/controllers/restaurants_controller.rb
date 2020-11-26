@@ -5,7 +5,11 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all
+    if params[:query]
+      @restaurants = Restaurant.search_by_name_cuisine_address(params[:query])
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
 end
