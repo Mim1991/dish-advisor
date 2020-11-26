@@ -6,6 +6,9 @@
     <div class="dish-name">
       <h2><%= dish.name %></h2>
     </div>
+    <div class="dish-allergen">
+      <p><%= dish.allergen %></p>
+    </div>
     <div class="dish-description">
       <p><%= dish.description %></p>
     </div>
@@ -27,6 +30,7 @@
     </div>
     <div class="dish-review-link">
         <%= link_to "Add review", new_dish_review_path(dish) %>
+        <%= link_to "Add to favourites", dish_favourites_path(dish), method: :post, remote:true %>
     </div>
     <!-- Modal -->
     <div class="screen-overlay">
