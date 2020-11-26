@@ -37,6 +37,9 @@
             <p><%= dish.description %></p>
           </div>
           <div class="rating-content-scores">
+            <% if dish.reviews.count == 0  %>
+              <h5>No Reviews Yet!</h5>
+            <% else %>
             <div class="review-heading">
               <h5>Total Reviews: <span id="review-count-select"><%= dish.reviews.count %></span></h5>
             </div>
@@ -117,6 +120,7 @@
                 </div>
               </div>
             </div>
+          <% end %>
           </div>
 
           <div class="individual-review">

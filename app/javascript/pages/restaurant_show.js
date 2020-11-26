@@ -17,7 +17,7 @@ const initModal  = () => {
         const barColour = bar.querySelector(".bar-colour")
         const starsRating = bar.querySelector(".rating-count-star").innerHTML
         const starsRatingInt = parseFloat(starsRating)
-        barColour.style.width = 100 * (starsRatingInt / reviewCountInt) + "%"
+          barColour.style.width = 100 * (starsRatingInt / reviewCountInt) + "%"
       })
     })
   })
