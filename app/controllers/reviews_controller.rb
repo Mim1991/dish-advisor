@@ -1,5 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :find_dish, only: [:new, :create]
+
+  def index
+    @reviews = Review.all
+    @user_reviews = current_user.reviews.order(created_at: :asc)
+  end
+
   def new
     @review = Review.new
   end

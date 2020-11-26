@@ -1,0 +1,27 @@
+<ul class="list-inline tabs-underlined">
+  <li>
+    <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined active" %>
+  </li>
+  <li>
+    <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined" %>
+  </li>
+</ul>
+<div class="dashboard">
+  <h4 class="heading">HELLO <%= current_user.first_name.upcase %>!</h4>
+  <div class="user-favourites">
+    <h6 class="sub-heading">RECENT FAVOURITES</h6>
+    <div class="row" id="dashboard-row">
+      <% @favourite_dishes.each do |favourite| %>
+      <div class="col-sm-12">
+        <div class="dashboard-card">
+          <div class="dashboard-infos">
+            <h6><%= favourite.dish.restaurant.name %> | <%= favourite.dish.restaurant.address %></h6>
+            <p><%= link_to favourite.dish.name.upcase, restaurant_path(favourite.dish.restaurant.id) %></p>
+            <p><%= favourite.dish.description %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
