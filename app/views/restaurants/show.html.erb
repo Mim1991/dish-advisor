@@ -35,16 +35,16 @@
     <div class="screen-overlay">
       <div class="modal-box-total modal-box-border">
         <div class="modal-box">
-          <div class="rating-overview">
-            <h5><%= dish.name %></h5>
-            <p><%= dish.description %></p>
+          <div class="rating-overview text-center">
+            <h5 class="dish-name-popup"><%= dish.name.upcase %></h5>
+            <p class="dish-description-popup"><%= dish.description %></p>
           </div>
           <div class="rating-content-scores">
             <% if dish.reviews.count == 0  %>
               <h5>No Reviews Yet!</h5>
             <% else %>
             <div class="review-heading">
-              <h5>Reviews (<span id="review-count-select"><%= dish.reviews.count %></span>)</h5>
+              <h5>REVIEWS (<span id="review-count-select"><%= dish.reviews.count %></span>)</h5>
             </div>
             <div class="stars-container">
               <div class="number-stars">
@@ -127,12 +127,14 @@
           </div>
 
           <div class="review-list">
-            <% dish.reviews.each do |review| %>
+            <% dish.reviews.reverse.each do |review| %>
               <div class="individual-review">
               <div class="review-user">
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
-                <p class="review-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
-                <p class="review-nationality"><%= review.user.nationality %></p>
+                <div class="title-positioning">
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+                  <p class="review-name"><%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %></p>
+                </div>
+                <p class="review-nationality"><%= review.user.nationality.upcase %></p>
               </div>
               <div class="review-body">
                 <div class="star-visit">
@@ -145,18 +147,18 @@
                     <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i / 7 %> weeks since visit </p>
                   <% end %>
                 </div>
-                <h3><%= review.title%></h3>
+                <p class="review-title"><%= review.title%></p>
                 <p class="review-content"><%= review.content %></p>
-                <p class="review-visit"><span>Date of Visit:</span> <%= review.visit_date.strftime("%b %d, %Y") %></p>
+                <p class="review-visit"><span>Review Date -  </span> <%= review.created_at.strftime("%b %d, %Y") %></p>
               </div>
             </div>
             <% end %>
           </div>
-
+          <div class="margin-bottom-pad"></div>
 
 
           <div class="fave-button">
-            <%= link_to "Add to favourites", dish_favourites_path(dish), method: :post, remote:true %>
+            <%= link_to "FAVOURITE", dish_favourites_path(dish), method: :post, remote:true %>
           </div>
         </div>
       </div>
