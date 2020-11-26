@@ -36,5 +36,3 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
 });
 
-import { $grid } from '../pages/restaurant_index'
-import { $quicksearch } from '../pages/restaurant_index'
