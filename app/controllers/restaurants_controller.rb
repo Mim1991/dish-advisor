@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @favourite_dishes = current_user.favourites
   end
 
   def index
