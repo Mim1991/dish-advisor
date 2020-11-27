@@ -1,12 +1,37 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
+  background: rgba(14, 26, 26, 0.8);
+  position: sticky;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .logo img {
+  width: 50px;
+  padding: 0px;
+}
+
+.navbar-lewagon .logo {
+  color: $my-yellow;
+  font-family: $headers-font;
+  letter-spacing: 0.3em;
+  font-size: 18px !important;
+  text-align: center;
+  width: 200px;
+  position: relative;
+  list-style-type: none;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: $my-yellow !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  padding-top: 100px;
 }
