@@ -28,6 +28,14 @@
   list-style-type: none;
 }
 
+.navbar-lewagon .logo li {
+  text-decoration: none;
+  color: $my-yellow;
+  &:hover {
+    text-decoration: none;
+    color: $my-yellow;
+  }
+}
 .navbar-nav .nav-item .nav-link {
   color: $my-yellow !important;
   font-family: 'Montserrat', sans-serif;
