@@ -20,7 +20,7 @@
         <div class="dashboard-card">
           <div class="dashboard-infos" id="fav-infos">
           <div class="dish-title">
-            <%= link_to favourite.dish.name.upcase, restaurant_path(favourite.dish.restaurant.id) %>
+            <%= link_to favourite.dish.name.upcase, restaurant_path(favourite.dish.restaurant.id, anchor: "#{favourite.dish.name.parameterize}") %>
             <% if favourite.dish.dish_type == "Starter" %>
               <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/1721/1721500.svg" alt="starter">
             <% elsif favourite.dish.dish_type == "Main" %>
