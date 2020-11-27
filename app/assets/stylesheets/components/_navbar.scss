@@ -5,6 +5,7 @@
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -30,8 +31,4 @@
 .navbar-nav .nav-item .nav-link {
   color: $my-yellow !important;
   font-family: 'Montserrat', sans-serif;
-}
-
-body {
-  padding-top: 100px;
 }

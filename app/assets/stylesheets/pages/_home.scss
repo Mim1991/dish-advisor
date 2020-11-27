@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.search-container {
+  margin: auto !important;
+  width: 80%;
+}
+
+.homepage-container{
+  height: 100%;
+}
+
+.search-container .search-bar-restaurant {
+  margin: auto !important;
+  text-align: center;
+  padding: 20px;
+}
+
+.search-container .search-bar-dishes {
+  margin: auto !important;
+  text-align: center;
+}
+body {
+  height: 100vh;
+}
+
+.page-container {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
