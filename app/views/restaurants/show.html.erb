@@ -1,10 +1,10 @@
 
-<h1 class="text-center"><%= @restaurant.name %> </h1>
+<h1 class="text-center rest-name-show"><%= @restaurant.name.upcase %> </h1>
 
 <div class="restaurant-dish-grid">
   <% @restaurant.dishes.each do |dish| %>
-  <div class="dish-card" id="<%= dish.name.parameterize %>">
-    <div class="dish-name">
+  <div class="dish-card individual-review" id="<%= dish.name.parameterize %>">
+    <div class="dish-name text-center">
       <h2><%= dish.name %></h2>
     </div>
     <div class="dish-allergen">
@@ -23,14 +23,14 @@
         <% average =  (sum / dish.reviews.count) %>
         <%= average.round(1) %>
       <% else %>
-        <p>No Ratings yet!</p>
+        <p class="no-reviews">NO REVIEWS</p>
       <% end %>
     </div>
     <div class="dish-rating-icons-size">
       <p id="rating-margin"><%="🍴" * average.to_f.round()%></p>
     </div>
     <div class="dish-review-link">
-        <%= link_to "Add review", new_dish_review_path(dish) %>
+        <%= link_to "REVIEW", new_dish_review_path(dish) %>
     </div>
     <!-- Modal -->
 
@@ -46,7 +46,7 @@
           </div>
           <div class="rating-content-scores">
             <% if dish.reviews.count == 0  %>
-              <h5>No Reviews Yet!</h5>
+              <h5><em>No Reviews Yet</em></h5>
             <% else %>
             <div class="review-heading">
               <h5>REVIEWS (<span id="review-count-select"><%= dish.reviews.count %></span>)</h5>
