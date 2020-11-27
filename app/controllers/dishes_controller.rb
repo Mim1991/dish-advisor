@@ -1,7 +1,7 @@
 class DishesController < ApplicationController
   def index
-    if params[:query]
-      @dishes = Dish.search_by_name_description_allergen(params[:query])
+    if params[:query2]
+      @dishes = Dish.search_by_name_description_allergen(params[:query2])
       # @result = PgSearch.multisearch(params[:query])
     else
       @dishes = Dish.all

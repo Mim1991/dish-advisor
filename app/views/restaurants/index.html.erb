@@ -3,8 +3,8 @@
   <div class="search-container">
     <div class="search-bar-restaurant">
       <%= form_tag restaurants_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
+        <%= text_field_tag :query1,
+        params[:query1],
         class: "form_control form-search form-search-colour", id: "form-button-search",
         placeholder: "Search"
         %>
@@ -14,8 +14,8 @@
 
     <div class="search-bar-dishes">
       <%= form_tag dishes_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
+        <%= text_field_tag :query2,
+        params[:query2],
         class: "form_control form-search form-search-colour", id: "form-button-search",
         placeholder: "Search"
         %>
