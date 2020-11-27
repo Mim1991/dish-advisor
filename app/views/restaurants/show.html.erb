@@ -2,7 +2,7 @@
 
 <div class="restaurant-dish-grid">
   <% @restaurant.dishes.each do |dish| %>
-  <div class="dish-card">
+  <div class="dish-card" id="<%= dish.name.parameterize %>">
     <div class="dish-name">
       <h2><%= dish.name %></h2>
     </div>

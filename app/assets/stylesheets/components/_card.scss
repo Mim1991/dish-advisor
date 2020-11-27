@@ -6,6 +6,7 @@
   margin-bottom: 20px 0px;
   border-bottom: 1px solid $my-green;
   padding: 16px 0px;
+  scroll-margin-top: 93px;
 }
 
 .dish-description{
@@ -42,12 +43,6 @@
   height: 18px;
   width: auto;
   object-fit: cover;
-}
-
-.dashboard-infos h6 {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0;
 }
 
 .dashboard-infos a {
