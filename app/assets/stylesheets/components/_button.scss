@@ -12,6 +12,7 @@
   color: white;
   border: none;
   background-color: $my-green;
+  border: 2px solid $my-green;
   padding: 8px 19px;
   font-style: italic;
   font-family: $headers-font;
@@ -24,13 +25,15 @@
 
 #form-button-search {
   border: none;
-  background-color: $my-pink;
+  background-color: transparent;
+  border: 1px solid $my-green;
+  margin-right: -10px;
   font-family: $headers-font;
   letter-spacing: 1px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 8px 19px;
-  width: 105px;
+  width: 56%;
 }
 
 .small-pink-button {
