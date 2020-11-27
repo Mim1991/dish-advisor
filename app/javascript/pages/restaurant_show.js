@@ -1,46 +1,54 @@
 
 const initModal  = () => {
   const dishCard = document.querySelectorAll(".dish-card")
+  const screenOverlay = document.querySelector(".screen-overlay")
+
+
+
+
 
   dishCard.forEach ((dish) => {
-    dish.addEventListener("click", (event) => {
-      const modalBox = dish.querySelector(".modal-box-total")
-      const screenOverlay = dish.querySelector(".screen-overlay")
+    const modalBox = dish.querySelector(".modal-box-total")
 
-      // opens the modal
-      modalBox.classList.add("display-block")
-      screenOverlay.classList.add("display-block")
+    dish.addEventListener("click", event => {
+      const modalCloseBtn = dish.querySelector(".close-modal")
+      if (modalBox.classList.contains("display-none")) {
+        modalBox.classList.remove("display-none")
+        modalBox.classList.add("display-block")
+      }
+
+      modalCloseBtn.addEventListener("click", event => {
+        event.stopPropagation()
+        modalBox.classList.remove("display-block")
+        modalBox.classList.add("display-none")
+      })
+
 
       // barchart sizing
       const barChart = dish.querySelectorAll(".number-stars")
-      const reviewCount = dish.querySelector("#review-count-select").innerHTML
-      const reviewCountInt = parseInt(reviewCount)
+      const reviewCount = dish.querySelector("#review-count-select")
+      if (reviewCount) {
+        const reviewCountInt = parseInt(reviewCount.innerHTML)
 
-      barChart.forEach((bar) => {
-        const barColour = bar.querySelector(".bar-colour")
-        const starsRating = bar.querySelector(".rating-count-star").innerHTML
-        const starsRatingInt = parseFloat(starsRating)
-        barColour.style.width = 100 * (starsRatingInt / reviewCountInt) + "%"
-      })
+        barChart.forEach((bar) => {
+          const barColour = bar.querySelector(".bar-colour")
+          const starsRating = bar.querySelector(".rating-count-star").innerHTML
+          const starsRatingInt = parseFloat(starsRating)
+          barColour.style.width = 100 * (starsRatingInt / reviewCountInt) + "%"
+        })
+      }
 
       const favouriteButton = dish.querySelector(".fave-button")
       const linkSelect = dish.querySelector(".link-select")
       favouriteButton.addEventListener("click", (event) => {
-        console.log(linkSelect.innerHTML)
-        linkSelect.innerHTML = "ADDED TO FAVOURITES"
-        linkSelect.classList.remove("link-select")
-        linkSelect.classList.add("black")
+        if (linkSelect) {
+          linkSelect.innerHTML = "ADDED TO FAVOURITES"
+          linkSelect.classList.remove("link-select")
+          linkSelect.classList.add("black")
+        }
        })
-
-      // close the modal
-      const closeModal = dish.querySelector(".close-modal")
-      console.log(closeModal)
-      closeModal.addEventListener("click", (event) => {
-        // modalBox.classList.remove("display-block")
-        modalBox.style.height = 0
-        screenOverlay.classList.remove("display-block")
-      })
     })
+
   })
 }
 
