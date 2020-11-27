@@ -1,0 +1,22 @@
+.heading, .sub-heading {
+  text-align: center;
+  color: $my-green;
+  font-weight: bold;
+}
+
+.sub-heading {
+  margin-bottom: 0;
+}
+
+.dashboard-infos {
+  color: $my-yellow;
+  font-family: $body-font;
+}
+
+#review-info {
+  padding: 12px;
+}
+
+.fas {
+  font-size: 9px;
+}

@@ -1,0 +1,22 @@
+.heading, .sub-heading {
+  text-align: center;
+  color: $my-green;
+  font-weight: bold;
+}
+
+.sub-heading {
+  margin-bottom: 0;
+}
+
+.dish-icon {
+  padding-left: 8px;
+}
+
+.delete-button {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.link {
+  grid-row: 2/3;
+}
