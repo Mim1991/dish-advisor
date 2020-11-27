@@ -6,18 +6,12 @@ const initModal  = () => {
     dish.addEventListener("click", (event) => {
       const modalBox = dish.querySelector(".modal-box-total")
       const screenOverlay = dish.querySelector(".screen-overlay")
-      const closeModal = dish.querySelector(".close-modal")
+
       // opens the modal
       modalBox.classList.toggle("display-block")
       screenOverlay.classList.toggle("display-block")
 
-      // const modalBoxOpen = dish.querySelector(".modal-box-total")
-      // const screenOverlayOpen = dish.querySelector(".screen-overlay")
-      // closeModal.addEventListener("click", (event) => {
-      //     modalBoxOpen.classList.remove("display-block")
-      //     screenOverlay.classList.remove("display-block")
-      // })
-
+      // barchart sizing
       const barChart = dish.querySelectorAll(".number-stars")
       const reviewCount = dish.querySelector("#review-count-select").innerHTML
       const reviewCountInt = parseInt(reviewCount)
@@ -36,8 +30,14 @@ const initModal  = () => {
         linkSelect.innerHTML = "ADDED TO FAVOURITES"
         linkSelect.classList.remove("link-select")
         linkSelect.classList.add("black")
-      })
+       })
 
+      // close the modal
+      const closeModal = dish.querySelector(".close-modal")
+      closeModal.addEventListener("click", (event) => {
+        modalBox.classList.remove("display-block")
+        screenOverlay.classList.remove("display-block")
+      })
     })
   })
 }
