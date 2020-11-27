@@ -72,21 +72,21 @@
 }
 
 .dashboard-card img {
-  height: 18px;
+  height: 32px;
   width: auto;
   object-fit: cover;
 }
 
 .dashboard-infos a {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 20px;
   color: $my-yellow;
   font-weight: bold;
   margin: 0;
 }
 
 .dashboard-infos p {
-  font-size: 10px;
+  font-size: 17px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -111,4 +111,8 @@
 .dish-review-link {
   margin-bottom: 18px;
   margin-top: 18px;
+}
+
+#dashboard-row {
+  margin-top: 8px;
 }
