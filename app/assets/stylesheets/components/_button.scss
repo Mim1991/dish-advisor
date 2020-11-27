@@ -12,13 +12,14 @@
   color: white;
   border: none;
   background-color: $my-green;
-  padding: 12px 19px;
+  padding: 8px 19px;
   font-style: italic;
   font-family: $headers-font;
   letter-spacing: 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   transition: 0.5s ease;
+  width: 150px;
 }
 
 #form-button-search {
@@ -28,7 +29,8 @@
   letter-spacing: 1px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 12px 19px;
+  padding: 8px 19px;
+  width: 105px;
 }
 
 .small-pink-button {
