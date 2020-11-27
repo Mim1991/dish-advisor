@@ -35,16 +35,16 @@
     </div>
     <% @restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
-        <div class="restaurant-card">
+        <div class="restaurant-card individual-review">
           <div class="restaurant-image">
             <%= cl_image_tag("Bao_ffjdtz") %>
           </div>
           <div class="restaurant-data">
             <div class="restaurant-name">
-              <%= restaurant.name %>
+              <p> <%= restaurant.name %> </p>
             </div>
             <div class="restaurant-cuisine">
-              <%= restaurant.cuisine %>
+              <p> <%= restaurant.cuisine %> </p>
             </div>
             <div class="restaurant-data">
               <li><%= restaurant.address %> / <%= restaurant.phone_number %></li>
@@ -53,7 +53,7 @@
           </div>
         </div>
       <% end %>
-      <div class="border">
+      <div class="border-rest-card">
       </div>
       <% end %>
   <% end %>
