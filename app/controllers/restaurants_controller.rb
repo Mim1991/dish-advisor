@@ -6,10 +6,11 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    if params[:query]
-      @restaurants = Restaurant.search_by_name_cuisine_address(params[:query])
+    if params[:query1]
+      @restaurants = Restaurant.search_by_name_cuisine_address(params[:query1])
     else
       @restaurants = Restaurant.all
+    end
       @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
@@ -17,7 +18,6 @@ class RestaurantsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant }),
         image_url: helpers.asset_url('372_36_1440760950.jpg')
       }
-      end
     end
   end
 end
