@@ -8,8 +8,8 @@ const initModal  = () => {
       const screenOverlay = dish.querySelector(".screen-overlay")
 
       // opens the modal
-      modalBox.classList.toggle("display-block")
-      screenOverlay.classList.toggle("display-block")
+      modalBox.classList.add("display-block")
+      screenOverlay.classList.add("display-block")
 
       // barchart sizing
       const barChart = dish.querySelectorAll(".number-stars")
@@ -34,8 +34,10 @@ const initModal  = () => {
 
       // close the modal
       const closeModal = dish.querySelector(".close-modal")
+      console.log(closeModal)
       closeModal.addEventListener("click", (event) => {
-        modalBox.classList.remove("display-block")
+        // modalBox.classList.remove("display-block")
+        modalBox.style.height = 0
         screenOverlay.classList.remove("display-block")
       })
     })
