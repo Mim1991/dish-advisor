@@ -30,15 +30,13 @@ import { initModal } from '../pages/restaurant_show'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  initModal();
-});
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { prevScrollpos } from '../plugins/init_navbar';
 
 document.addEventListener('turbolinks:load', () => {
+  initModal();
   initMapbox();
+  prevScrollpos();
 })
 
