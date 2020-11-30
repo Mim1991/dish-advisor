@@ -1,22 +1,22 @@
-<div class="tabs">
-  <ul class="list-inline tabs-underlined">
-    <li>
-      <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined" %>
-    </li>
-    <li>
-      <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
-    </li>
-  </ul>
-</div>
-
-<div class="dashboard">
+<% if @user == current_user %>
+  <div class="tabs">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "FAVOURITES", user_favourites_path(current_user), class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
+      </li>
+    </ul>
+  </div>
+  <div class="dashboard">
   <div class="profile-banner">
-    <h1 class="heading">HELLO <%= current_user.first_name.upcase %>!</h1>
-    <h2 class="sub-heading">RECENT REVIEWS</h2>
+    <h1 class="heading">HELLO <%= @user.first_name.upcase %>!</h1>
+    <h2 class="sub-heading">YOUR REVIEWS</h2>
   </div>
   <div class="user-favourites">
     <div class="row" id="dashboard-row">
-      <% @user_reviews.each do |review| %>
+      <% @user.reviews.order(created_at: :desc).each do |review| %>
       <div class="col-sm-12">
         <div class="dashboard-card">
           <div class="dashboard-infos" id="review-info">
@@ -39,3 +39,44 @@
     </div>
   </div>
 </div>
+<% else %>
+  <!-- <div class="tabs">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "REVIEWS", user_reviews_path(current_user), class: "tab-underlined active" %>
+      </li>
+    </ul>
+  </div> -->
+  <div class="dashboard">
+    <div class="profile-banner">
+      <h1 class="heading"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %>'s </h1>
+      <h2 class="sub-heading">RECENT REVIEWS</h2>
+    </div>
+    <div class="user-favourites">
+      <div class="row" id="dashboard-row">
+        <% @user.reviews.order(created_at: :desc).each do |review| %>
+        <div class="col-sm-12">
+          <div class="dashboard-card">
+            <div class="dashboard-infos" id="review-info">
+              <% if review.rating == 1 %>
+                <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %> | <i class="fas fa-star"></i>
+              <% elsif review.rating == 2 %>
+                <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <% elsif review.rating == 3 %>
+                <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <% elsif review.rating == 4 %>
+                <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <% elsif review.rating == 5 %>
+                <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %> | <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <% end %>
+              <p><%= review.content %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
