@@ -2,8 +2,7 @@ class ReviewsController < ApplicationController
   before_action :find_dish, only: [:new, :create]
 
   def index
-    @reviews = Review.all
-    @user_reviews = current_user.reviews.order(created_at: :asc)
+    @user = User.find(params[:user_id])
   end
 
   def new

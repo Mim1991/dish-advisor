@@ -177,10 +177,11 @@
   align-items: center;
 }
 
-.review-name {
+.review-name a {
   padding: 0px 17px;
   letter-spacing: 2px;
   color: $my-green;
+  text-decoration: none;
 }
 
 .review-nationality {
