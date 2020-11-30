@@ -2,8 +2,16 @@
 <h1 class="text-center rest-name-show"><%= @restaurant.name.upcase %> </h1>
 
 <div class="restaurant-dish-grid">
-  <% @restaurant.dishes.each do |dish| %>
-  <div class="dish-card individual-review" id="<%= dish.name.parameterize %>">
+    <div class="top-rated-position">
+      <p><i class="fas fa-crown" id="flag-colour-size"></i>Top Rated</p>
+    </div>
+  <%=  %>
+  <% @restaurant.top_review.each do |dish| %>
+  <% if @restaurant.most_reviewed.id == dish.id %>
+    <div class="dish-card individual-review most-reviews-dish" id="<%= dish.name.parameterize %>">
+  <% else  %>
+    <div class="dish-card individual-review" id="<%= dish.name.parameterize %>">
+  <% end %>
     <div class="dish-name text-center">
       <h2><%= dish.name %></h2>
     </div>
@@ -14,20 +22,15 @@
       <p><%= dish.description %></p>
     </div>
     <div class="dish-average-rating">
-      <% sum = 0.0 %>
-      <% dish.reviews.each do |review| %>
-        <% sum += review.rating %>
-        <% sum %>
-      <% end %>
-      <% if sum >= 1 %>
-        <% average =  (sum / dish.reviews.count) %>
-        <%= average.round(1) %>
-      <% else %>
+
+      <% if dish.average_review.zero? %>
         <p class="no-reviews">NO REVIEWS</p>
+      <% else %>
+        <%= dish.average_review.round(1) %>
       <% end %>
     </div>
     <div class="dish-rating-icons-size">
-      <p id="rating-margin"><%="🍴" * average.to_f.round()%></p>
+      <p id="rating-margin"><%="🍴" * dish.average_review%></p>
     </div>
     <div class="dish-review-link">
         <%= link_to "REVIEW", new_dish_review_path(dish) %>
@@ -144,7 +147,7 @@
               <div class="review-body">
                 <div class="star-visit">
                   <p class="review-rating"><%= "🍴" * review.rating.to_i %></p>
-                  <% if ((Date.today - review.visit_date).to_i) == 1 %>
+                  <% if ((Date.today - review.visit_date).to_i) <= 1 %>
                     <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> day since visit </p>
                   <% elsif ((Date.today - review.visit_date).to_i / 7) < 1 %>
                     <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> days since visit </p>

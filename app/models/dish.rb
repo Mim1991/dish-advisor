@@ -21,4 +21,15 @@ class Dish < ApplicationRecord
   #     tsearch:{
   #       prefix: true }
   # }
+
+  def review_count
+    most_reviews = reviews.pluck(:rating).length
+  end
+
+  def average_review
+    selected_reviews = reviews.where.not(rating: nil)
+    return 0 unless selected_reviews.present?
+
+    selected_reviews.pluck(:rating).sum / selected_reviews.pluck(:rating).length.to_f
+  end
 end

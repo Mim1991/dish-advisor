@@ -22,4 +22,24 @@ class Restaurant < ApplicationRecord
   #     tsearch:{
   #       prefix: true }
   # }
+
+  def most_reviewed
+    dish_most_reviewed = dishes.sort_by { |dish| dish.review_count }
+    dish_most_reviewed.last()
+  end
+
+  def top_review
+    dish_with_reviews = dishes.select { |dish| dish.average_review.present? }
+
+    dish_with_reviews.sort_by { |dish| dish.average_review.nil? ? 0 : -dish.average_review }
+  end
+
 end
+
+
+
+
+
+
+
+

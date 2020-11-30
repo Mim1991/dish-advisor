@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initModal } from '../pages/restaurant_show'
+import { initTopRated } from '../pages/restaurant_show'
+import { initMostReviews } from '../pages/restaurant_show'
 
 
 // Internal imports, e.g:
@@ -34,6 +36,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initModal();
+  initTopRated();
+  initMostReviews();
 });
 
 import { initMapbox } from '../plugins/init_mapbox';
