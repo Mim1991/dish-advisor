@@ -140,7 +140,10 @@
               <div class="review-user">
                 <div class="title-positioning">
                   <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
-                  <p class="review-name"><%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %></p>
+                  <p class="review-name"><%= link_to user_reviews_path(review.user) do %>
+                    <%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %>
+                  <% end %>
+                  </p>
                 </div>
                 <p class="review-nationality"><%= review.user.nationality.upcase %></p>
               </div>
