@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initModal } from '../pages/restaurant_show'
-
+import { expand } from '../components/search_expand'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,5 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
   initMapbox();
   prevScrollpos();
+  expand();
 })
+
 

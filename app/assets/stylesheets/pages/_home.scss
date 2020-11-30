@@ -4,6 +4,26 @@
   width: 80%;
 }
 
+.search-container-restaurant {
+  // display: flex;
+  margin: 5px;
+  width: 100%;
+  padding: 5px;
+}
+
+.search-container-dish {
+  // display: flex;
+  margin: 5px;
+  width: 100%;
+  padding: 5px;
+}
+
+#dish-button{
+  margin-top: 6px;
+}
+#restaurant-button{
+  margin-top: 6px;
+}
 .homepage-container{
   height: 100%;
 }
@@ -11,12 +31,13 @@
 .search-container .search-bar-restaurant {
   margin: auto !important;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .search-container .search-bar-dishes {
   margin: auto !important;
   text-align: center;
+  padding: 10px;
 }
 body {
   height: 100vh;
@@ -28,3 +49,28 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.search-bar-restaurant {
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.search-bar-dishes {
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+.animated {
+  opacity: 1;
+  transition: all 1.3s ease-out;
+}
+
+
+.hidden {
+  opacity: 0;
+  width: 0px;
+}
+
+#form-button-search {
+  width: 100%;
+}
+

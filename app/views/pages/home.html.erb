@@ -1,25 +1,30 @@
 <div class ="page-container", style="background-image: url('https://res.cloudinary.com/dh6gdchfj/image/upload/v1606478480/brooke-lark-wMzx2nBdeng-unsplash_y2wxgy.jpg'); position: relative; top: -93px">
   <div class="search-container", style="position: relative; top: 350px">
-    <div class="search-bar-restaurant">
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form_control form-search form-search-colour", id: "form-button-search",
-        placeholder: "Search"
-        %>
-        <%= submit_tag "Restaurant", class: "btn-search-home" %>
-      <% end %>
-    </div>
+    <div class="search-container-restaurant">
+      <div class="btn-search-home" id="restaurant-button">Restaurant</div>
+      <div class="search-bar-restaurant hidden">
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= text_field_tag :query1,
+          params[:query1],
+          class: "form_control form-search form-search-colour", id: "form-button-search",
+          placeholder: "Search"
+          %>
+        <% end %>
+      </div>
+   </div>
 
-    <div class="search-bar-dishes">
-      <%= form_tag dishes_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form_control form-search form-search-colour", id: "form-button-search",
-        placeholder: "Search"
-        %>
-        <%= submit_tag "Dish", class: "btn-search-home" %>
-      <% end %>
+    <div class="search-container-dish">
+      <div class="btn-search-home" id="dish-button">Dish</div>
+      <div class="search-bar-dishes hidden">
+        <%= form_tag dishes_path, method: :get do %>
+          <%= text_field_tag :query2,
+          params[:query2],
+          class: "form_control form-search form-search-colour", id: "form-button-search",
+          placeholder: "Search"
+          %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+
