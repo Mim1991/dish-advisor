@@ -118,36 +118,59 @@
 }
 
 .top-rated-dish {
-  border: 3px solid #efac2c;
-  box-shadow: 0 0 4px 1px #efac2c91;
+  border: 3px solid $my-yellow !important;
+  box-shadow: 0 0 4px 1px #efac2c91 !important;
+}
+
+.top-rated-dish a {
+  border: 3px solid $my-yellow !important;
 }
 
 .most-reviews-dish {
-  border: 3px solid #7367da;
-  box-shadow: 0 0 4px 1px #7367da85;
+  border: 3px solid $my-yellow;
+  box-shadow: 0 0 4px 1px #efac2c91;
 }
+
 
 .top-rated-position {
   position: absolute;
   right:5%;
   padding-left: 9px;
-  padding-right: 5px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 2px;
+  padding-right: 4px;
+  padding-top: 0.5px;
+  // border-top-left-radius: 4px;
+  // border-bottom-left-radius: 2px;
   background-color: $my-yellow;
 }
 
 .most-reviewed-position {
   position: relative;
-  top: -8%;
+  top: -7%;
   left: 0%;
   padding-left: 9px;
   padding-right: 5px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-color: #7367da;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  // border-bottom-left-radius: 2px;
+  // border-bottom-right-radius: 2px;
+  background-color: $my-yellow;
 }
 
+.critics-choice-position {
+  position: relative;
+  top: -7%;
+  left: -39%;
+  padding-left: 9px;
+  padding-right: 5px;
+  margin-left: 3px;
+  // border-bottom-left-radius: 2px;
+  // border-bottom-right-radius: 2px;
+  background-color: $my-yellow;
+}
+
+.critics-choice-position i {
+  margin-right: 5px;
+}
 
 #flag-colour-size {
   color: white;
@@ -164,6 +187,14 @@
 }
 
 .most-reviewed-position p{
+  margin-bottom: 0;
+  color: white;
+  font-size: 11px;
+  padding-top: 2px;
+  padding-right: 6px;
+}
+
+.critics-choice-position p{
   margin-bottom: 0;
   color: white;
   font-size: 11px;

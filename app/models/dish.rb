@@ -22,6 +22,12 @@ class Dish < ApplicationRecord
   #       prefix: true }
   # }
 
+  def critic_choice
+    critic_rev = reviews.select do |review|
+      review.user.critic == true && review.rating == 5
+    end
+  end
+
   def review_count
     most_reviews = reviews.pluck(:rating).length
   end

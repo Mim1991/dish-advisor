@@ -24,6 +24,7 @@ class Restaurant < ApplicationRecord
   #       prefix: true }
   # }
 
+
   def most_reviewed
     dish_most_reviewed = dishes.sort_by { |dish| dish.review_count }
     dish_most_reviewed.last()

@@ -5,10 +5,13 @@
     <div class="top-rated-position">
       <p><i class="fas fa-crown" id="flag-colour-size"></i>Top Rated</p>
     </div>
-  <%=  %>
   <% @restaurant.top_review.each do |dish| %>
-  <% if @restaurant.most_reviewed.id == dish.id %>
+  <% if @restaurant.most_reviewed.id == dish.id && !dish.critic_choice.empty? %>
+    <div class="dish-card individual-review most-reviews-dish critics-choice-dish" id="<%= dish.name.parameterize %>">
+  <% elsif @restaurant.most_reviewed.id == dish.id %>
     <div class="dish-card individual-review most-reviews-dish" id="<%= dish.name.parameterize %>">
+  <% elsif !dish.critic_choice.empty? %>
+    <div class="dish-card individual-review critics-choice-dish" id="<%= dish.name.parameterize %>">
   <% else  %>
     <div class="dish-card individual-review" id="<%= dish.name.parameterize %>">
   <% end %>
@@ -33,7 +36,7 @@
       <p id="rating-margin"><%="🍴" * dish.average_review%></p>
     </div>
     <div class="dish-review-link">
-        <%= link_to "REVIEW", new_dish_review_path(dish) %>
+      <%= link_to "REVIEW", new_dish_review_path(dish)%>
     </div>
     <!-- Modal -->
 

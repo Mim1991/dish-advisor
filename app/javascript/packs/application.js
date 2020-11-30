@@ -27,6 +27,7 @@ import "bootstrap";
 import { initModal } from '../pages/restaurant_show'
 import { initTopRated } from '../pages/restaurant_show'
 import { initMostReviews } from '../pages/restaurant_show'
+import { initCriticChoice } from '../pages/restaurant_show'
 
 
 // Internal imports, e.g:
@@ -43,5 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   prevScrollpos();
   initTopRated();
   initMostReviews();
+  initCriticChoice();
 })
 
