@@ -9,7 +9,7 @@
 
 
 .modal-box-total {
-  border: 5px solid #efac2c78;
+  border: 2px solid #efac2c78;
   position: fixed;
   width: 100%;
   height: 92.5%;
@@ -50,7 +50,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   padding-bottom: 10px;
   background-color: $card-colour;
   color: $my-green;
@@ -350,11 +350,12 @@
 .review-margin {
   margin-bottom: -3px;
   position: relative;
+  padding-bottom: 20px;
 }
 
 .critic-review {
-  border-top: 1px solid #EFAC2C;
-  border-bottom: 1px solid #EFAC2C;
+  border-top: 2px solid $my-teal;
+  border-bottom: 2px solid $my-teal;
 }
 
 .critic-tag-small{
