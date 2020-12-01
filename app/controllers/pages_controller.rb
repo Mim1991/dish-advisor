@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
@@ -8,7 +10,7 @@ class PagesController < ApplicationController
     @ip = request.remote_ip
     @user_location = JSON.parse(open("http://iplocate.io/api/lookup/#{@ip}").read)
     @coordinates = [@user_location['latitude'], @user_location['longitude']]
-    @restaurants = Restaurant.near(@coordinates, 5)
+    @restaurants = Restaurant.near(@coordinates, 100)
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
