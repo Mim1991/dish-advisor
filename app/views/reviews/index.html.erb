@@ -33,6 +33,9 @@
             <% end %>
             <p><%= review.dish.restaurant.name.upcase %> | <%= review.dish.restaurant.address %></p>
             <p><%= review.content %></p>
+            <%= link_to review_path(review), method: :delete, remote:true, class: "link" do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
           </div>
         </div>
       </div>
