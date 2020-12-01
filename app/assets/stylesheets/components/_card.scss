@@ -126,16 +126,17 @@
   box-shadow: 0 0 4px 1px #efac2c91 !important;
 }
 
-// .top-rated-dish a {
-//   border: 3px solid $my-yellow !important;
-// }
+.top-rated-link {
+  border: 3px solid $my-yellow !important;
+  color: $my-yellow !important;
+}
 
 .most-reviews-dish {
   border: 3px solid $my-purple;
   box-shadow: 0 0 4px 1px $my-purple;
 }
 
-.critics-choice-dish {
+.critics-choice-dish-style {
   border: 3px solid $my-teal;
   box-shadow: 0 0 4px 1px $my-teal;
 }
@@ -149,6 +150,7 @@
   top:0;
   padding-top: 0.5px;
   background-color: $my-yellow;
+  border-bottom-left-radius: 25px;
 }
 
 .most-reviewed-position {
@@ -156,8 +158,10 @@
   width: 32%;
   top: 0;
   padding-top: 0.5px;
-  padding-bottom: 0.5px;
+  padding-bottom: 2.5px;
   background-color: $my-purple;
+  border-bottom-right-radius: 23px;
+  border-bottom-left-radius: 25px;
 }
 
 .critics-choice-position {
@@ -167,6 +171,7 @@
   width: 31%;
   margin-left: 3px;
   background-color: $my-teal;
+  border-bottom-right-radius: 23px;
 }
 
 .critics-choice-position i {
@@ -176,15 +181,16 @@
 #flag-colour-size {
   color: white;
   font-size: 11px;
-  margin-right: 9px;
+  margin-right: 4px;
 }
 
 .top-rated-position p {
   margin-bottom: 0;
   color: white;
   font-size: 11px;
-  padding-top: 2px;
-  padding-right: 6px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 0px;
 }
 
 .most-reviewed-position p{
@@ -201,6 +207,7 @@
   font-size: 11px;
   padding-top: 2px;
   padding-right: 6px;
+  padding-bottom: 1.5px;
 }
 
 

@@ -139,7 +139,6 @@
             <!-- if user is critic do -->
               <% if review.user.critic? %>
                 <div class="review-margin individual-review box-shadow-card critic-review">
-
               <% else %>
                 <div class="review-margin individual-review box-shadow-card">
               <% end %>
@@ -158,7 +157,7 @@
                   <% end %>
                   </p>
                 </div>
-                <p class="review-nationality"><%= review.user.nationality.upcase %></p>
+                <p class="review-nationality"><%= review.user.find_emoji %></p>
               </div>
               <div class="review-body">
                 <div class="star-visit">
