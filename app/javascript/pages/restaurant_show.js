@@ -1,3 +1,23 @@
+const initTopRated = () => {
+  const topDish = document.querySelector(".restaurant-dish-grid").children[1]
+  topDish.classList.add('top-rated-dish')
+}
+
+const initMostReviews = () => {
+  const mostRevDish = document.querySelector(".most-reviews-dish")
+  mostRevDish.insertAdjacentHTML( 'afterBegin', '<div class="most-reviewed-position"><p><i class="fas fa-fire-alt" id="flag-colour-size"></i>Most Reviewed</p></div>')
+  const linkButton = document.querySelector(".most-reviews-dish a")
+  linkButton.style.border = "2px solid #7468DA"
+}
+
+const initCriticChoice = () => {
+  const criticChoice = document.querySelector(".critics-choice-dish")
+  criticChoice.insertAdjacentHTML( 'afterBegin', '<div class="critics-choice-position"><p><i class="fas fa-fire-alt" id="flag-colour-size"></i>Critics Choice</p></div>')
+  const linkButton = document.querySelector(".critics-choice-dish a")
+  linkButton.style.border = "2px solid blue"
+}
+
+
 
 const initModal  = () => {
   const dishCard = document.querySelectorAll(".dish-card")
@@ -55,3 +75,6 @@ const initModal  = () => {
 
 
 export { initModal }
+export { initTopRated }
+export { initMostReviews }
+export { initCriticChoice }

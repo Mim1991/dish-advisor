@@ -25,10 +25,18 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initModal } from '../pages/restaurant_show'
+
+import { initTopRated } from '../pages/restaurant_show'
+import { initMostReviews } from '../pages/restaurant_show'
+import { initCriticChoice } from '../pages/restaurant_show'
+
+
 import { expand } from '../components/search_expand'
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
 
 
 import { initMapbox } from '../plugins/init_mapbox';
@@ -38,7 +46,13 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
   initMapbox();
   prevScrollpos();
+
+  initTopRated();
+  initMostReviews();
+  initCriticChoice();
+
   expand();
+
 })
 
 
