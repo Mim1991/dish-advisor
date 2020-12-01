@@ -24,7 +24,7 @@
   height: 100%;
 }
 
-#form-button-search {
+#form-button-search-restaurant, #form-button-search-dish {
   border: none;
   background-color: transparent;
   border: 1px solid $my-green;
@@ -33,9 +33,11 @@
   letter-spacing: 1px;
   border-radius: 25px;
   padding: 8px 19px;
-  width: 100%;
+  width: 300px;
   text-align: center;
-  height: 100%
+  height: 100%;
+  outline: none;
+
 }
 
 .small-pink-button {
