@@ -8,6 +8,13 @@ restaurant = Restaurant.new(
   website: 'www.baolondon.com',
   phone_number: '02075671234'
 )
+new_restaurant = Restaurant.new(
+  name: 'Bao Soho',
+  cuisine: 'Taiwanese',
+  address: 'London, E13 0HB',
+  website: 'www.baolondon.com',
+  phone_number: '02075671234'
+)
   restaurant.save!
   puts 'Created Restaurant'
   10.times do
