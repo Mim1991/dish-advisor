@@ -46,13 +46,10 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
   initMapbox();
   prevScrollpos();
-
   initTopRated();
   initMostReviews();
   initCriticChoice();
-
   expand();
-
 })
 
 
