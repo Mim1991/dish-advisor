@@ -2,19 +2,16 @@
 <h1 class="text-center rest-name-show"><%= @restaurant.name.upcase %> </h1>
 
 <div class="restaurant-dish-grid">
-    <div class="top-rated-position">
-      <p><i class="fas fa-crown" id="flag-colour-size"></i>Top Rated</p>
-    </div>
   <% @restaurant.top_review.each do |dish| %>
-  <% if @restaurant.most_reviewed.id == dish.id && !dish.critic_choice.empty? %>
-    <div class="dish-card individual-review most-reviews-dish critics-choice-dish" id="<%= dish.name.parameterize %>">
-  <% elsif @restaurant.most_reviewed.id == dish.id %>
-    <div class="dish-card individual-review most-reviews-dish" id="<%= dish.name.parameterize %>">
-  <% elsif !dish.critic_choice.empty? %>
-    <div class="dish-card individual-review critics-choice-dish" id="<%= dish.name.parameterize %>">
-  <% else  %>
-    <div class="dish-card individual-review" id="<%= dish.name.parameterize %>">
-  <% end %>
+    <% if @restaurant.most_reviewed.id == dish.id && !dish.critic_choice.empty? %>
+      <div class="dish-card box-shadow-card individual-review most-reviews-dish critics-choice-dish" id="<%= dish.name.parameterize %>">
+    <% elsif @restaurant.most_reviewed.id == dish.id %>
+      <div class="dish-card box-shadow-card individual-review most-reviews-dish" id="<%= dish.name.parameterize %>">
+    <% elsif !dish.critic_choice.empty? %>
+      <div class="dish-card box-shadow-card individual-review critics-choice-dish" id="<%= dish.name.parameterize %>">
+    <% else  %>
+      <div class="dish-card box-shadow-card individual-review" id="<%= dish.name.parameterize %>">
+    <% end %>
     <div class="dish-name text-center">
       <h2><%= dish.name %></h2>
     </div>
@@ -140,7 +137,15 @@
           <div class="review-list">
             <% dish.reviews.reverse.each do |review| %>
             <!-- if user is critic do -->
-              <div class="individual-review">
+              <% if review.user.critic? %>
+                <div class="review-margin individual-review box-shadow-card critic-review">
+
+              <% else %>
+                <div class="review-margin individual-review box-shadow-card">
+              <% end %>
+              <% if review.user.critic? %>
+                <div class="critics-choice-position critic-tag-small"><p><i class="fas fa-pen-nib" id="flag-colour-size"></i>Critic</p></div>
+              <% end %>
               <div class="review-user">
                 <div class="title-positioning">
                   <% if review.user.photo.attached? %>
@@ -171,6 +176,7 @@
                 <p class="review-visit"><span>Review Date -  </span> <%= review.created_at.strftime("%b %d, %Y") %></p>
               </div>
             </div>
+            <div class="seperator-clear seperator seperator-center "></div>
             <% end %>
           </div>
           <div class="margin-bottom-pad"></div>
@@ -181,7 +187,7 @@
               <% dish_array << favourite.dish.id %>
             <% end %>
             <% if dish_array.include? dish.id %>
-              <p class="black">ADDED TO FAVOURITES</p>
+              <p class="black">ADDED</p>
 
             <% else %>
               <%= link_to "FAVOURITE", dish_favourites_path(dish), class: "link-select" ,method: :post, remote:true %>
@@ -189,10 +195,11 @@
           </div>
         </div>
       </div>
-
   <!-- end of modal -->
-  </div>
-  <% end %>
+
+    </div>
+    <div class="seperator seperator-clear"></div>
+    <% end %>
 </div>
 
 

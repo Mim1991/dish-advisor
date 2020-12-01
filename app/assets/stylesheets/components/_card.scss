@@ -3,13 +3,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px 0px;
+  margin-bottom: 20px !important;
   padding: 16px 0px;
   scroll-margin-top: 93px;
+  position:relative;
+}
+
+.box-shadow-card {
+  box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
 }
 
 .rest-name-show {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
+  margin-top: 0px;
 }
 
 .dish-name {
@@ -39,10 +45,7 @@
 
 .dish-average-rating {
   color: #a9a7a7;
-}
-
-.dish-average-rating {
-  margin-bottom: 0px;
+  margin-bottom: 8px;
 }
 
 .dish-rating-icons-size p{
@@ -57,6 +60,7 @@
 
 .dish-card h2 {
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .dashboard {
@@ -100,7 +104,7 @@
 }
 
 .dish-review-link a {
-    color: $my-green;
+  color: $my-green;
   font-family: Montserrat;
   font-weight: 700;
   letter-spacing: 5px;
@@ -122,49 +126,41 @@
   box-shadow: 0 0 4px 1px #efac2c91 !important;
 }
 
-.top-rated-dish a {
-  border: 3px solid $my-yellow !important;
-}
+// .top-rated-dish a {
+//   border: 3px solid $my-yellow !important;
+// }
 
 .most-reviews-dish {
-  border: 3px solid $my-yellow;
-  box-shadow: 0 0 4px 1px #efac2c91;
+  border: 3px solid #8E5572;
+  box-shadow: 0 0 4px 1px #8E5572;
 }
 
 
 .top-rated-position {
   position: absolute;
-  right:5%;
-  padding-left: 9px;
-  padding-right: 4px;
+  width: 30%;
+  text-align:center;
+  right: 0;
+  top:0;
   padding-top: 0.5px;
-  // border-top-left-radius: 4px;
-  // border-bottom-left-radius: 2px;
   background-color: $my-yellow;
 }
 
 .most-reviewed-position {
-  position: relative;
-  top: -7%;
-  left: 0%;
-  padding-left: 9px;
-  padding-right: 5px;
+  position: absolute;
+  width: 32%;
+  top: 0;
   padding-top: 0.5px;
   padding-bottom: 0.5px;
-  // border-bottom-left-radius: 2px;
-  // border-bottom-right-radius: 2px;
-  background-color: $my-yellow;
+  background-color: #8E5572;
 }
 
 .critics-choice-position {
-  position: relative;
-  top: -7%;
-  left: -39%;
-  padding-left: 9px;
-  padding-right: 5px;
+  position: absolute;
+  top: 0;
+  left: -1%;
+  width: 31%;
   margin-left: 3px;
-  // border-bottom-left-radius: 2px;
-  // border-bottom-right-radius: 2px;
   background-color: $my-yellow;
 }
 

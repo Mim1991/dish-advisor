@@ -1,7 +1,15 @@
+// const initTopRated = () => {
+//   // const topDish = document.querySelector(".restaurant-dish-grid")
+//   if(topDish) {
+//   topDish.children[1].classList.add('top-rated-dish')
+//   }
+// }
+
 const initTopRated = () => {
   const topDish = document.querySelector(".restaurant-dish-grid")
-  if(topDish) {
-  topDish.children[1].classList.add('top-rated-dish')
+  if(topDish){
+    topDish.children[0].classList.add('top-rated-dish')
+    topDish.children[0].insertAdjacentHTML('afterBegin', '<div class="top-rated-position"><p><i class="fas fa-crown" id="flag-colour-size"></i>Top Rated</p></div>')
   }
 }
 
@@ -17,11 +25,18 @@ const initMostReviews = () => {
 const initCriticChoice = () => {
   const criticChoice = document.querySelector(".critics-choice-dish")
   if(criticChoice){
-  criticChoice.insertAdjacentHTML( 'afterBegin', '<div class="critics-choice-position"><p><i class="fas fa-fire-alt" id="flag-colour-size"></i>Critics Choice</p></div>')
+  criticChoice.insertAdjacentHTML( 'afterBegin', '<div class="critics-choice-position"><p><i class="fas fa-pen-nib" id="flag-colour-size"></i>Critics Choice</p></div>')
   // const linkButton = document.querySelector(".critics-choice-dish a")
   // linkButton.style.border = "2px solid blue"
   }
 }
+
+// const initCriticReview = () => {
+//   const criticReview = document.querySelector(".critic-review")
+//   if(criticReview){
+//     criticReview.insertAdjacentHTML( 'afterBegin', '<div class="critics-choice-position"><p><i class="fas fa-pen-nib" id="flag-colour-size"></i>Critics Choice</p></div>')
+//   }
+// }
 
 
 
@@ -68,7 +83,7 @@ const initModal  = () => {
       const linkSelect = dish.querySelector(".link-select")
       favouriteButton.addEventListener("click", (event) => {
         if (linkSelect) {
-          linkSelect.innerHTML = "ADDED TO FAVOURITES"
+          linkSelect.innerHTML = "ADDED"
           linkSelect.classList.remove("link-select")
           linkSelect.classList.add("black")
         }
@@ -84,3 +99,4 @@ export { initModal }
 export { initTopRated }
 export { initMostReviews }
 export { initCriticChoice }
+// export { initCriticReview }

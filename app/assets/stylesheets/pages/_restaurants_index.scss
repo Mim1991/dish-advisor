@@ -1,3 +1,8 @@
+.restaurant-index-page{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .restaurant-index-page h1 {
   text-align: center;
   text-transform: uppercase;
@@ -36,6 +41,7 @@
   text-align: center;
   width: 100%;
   margin-top: 16px;
+  padding-bottom: 20px;
 }
 
 #map {
@@ -44,7 +50,7 @@
   margin-top: 16px;
 }
 .border-rest-card {
-  border-bottom: 3px solid #dbbab43d;
+  // border-bottom: 3px solid #dbbab43d;
   width: 75%;
   height: 1px;
   margin: auto;
@@ -63,8 +69,11 @@
 }
 
 .restaurant-name p {
-  margin-top: 12px;
-  font-size: 1.8rem;
+  margin-top: 18px;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #dbbab43d;
 }
 
 .restaurant-cuisine {
