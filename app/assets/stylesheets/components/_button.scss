@@ -17,10 +17,11 @@
   font-style: italic;
   font-family: $headers-font;
   letter-spacing: 2px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 25px;
   transition: 0.5s ease;
-  width: 150px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
 }
 
 #form-button-search {
@@ -30,10 +31,11 @@
   margin-right: -10px;
   font-family: $headers-font;
   letter-spacing: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 25px;
   padding: 8px 19px;
-  width: 56%;
+  width: 100%;
+  text-align: center;
+  height: 100%
 }
 
 .small-pink-button {

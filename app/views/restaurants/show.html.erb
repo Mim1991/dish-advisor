@@ -139,10 +139,15 @@
 
           <div class="review-list">
             <% dish.reviews.reverse.each do |review| %>
+            <!-- if user is critic do -->
               <div class="individual-review">
               <div class="review-user">
                 <div class="title-positioning">
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+                  <% if review.user.photo.attached? %>
+                    <%= cl_image_tag(review.user.photo.key, crop: :thumb, gravity: :face, class: "avatar") %>
+                  <% else %>
+                   <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar"%>
+                  <% end %>
                   <p class="review-name"><%= link_to user_reviews_path(review.user) do %>
                     <%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %>
                   <% end %>
