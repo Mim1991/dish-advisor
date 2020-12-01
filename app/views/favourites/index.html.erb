@@ -31,13 +31,11 @@
               <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/887/887320.svg" alt="drink">
             <% end %>
           </div>
-          <div class="d-flex">
             <div class="dish-description">
-              <!-- <h6><%= favourite.dish.restaurant.name %> | <%= favourite.dish.restaurant.address %></h6> -->
               <p><%= favourite.dish.description %></p>
             </div>
-            <div class="delete-button">
-              <%= link_to favourite_path(favourite), method: :delete, remote:true, class: "link" do %>
+            <div class="favourite-button-links">
+              <%= link_to "REVIEW", new_dish_review_path(favourite.dish)%> | <%= link_to favourite_path(favourite), method: :delete, remote:true, class: "link" do %>
                 <i class="far fa-trash-alt"></i>
               <% end %>
             </div>
