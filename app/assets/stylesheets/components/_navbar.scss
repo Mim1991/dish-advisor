@@ -2,7 +2,7 @@
   justify-content: space-between;
   background: $my-green;
   position: sticky;
-  position: fixed; /* Set the navbar to fixed position */
+  // position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
   z-index: 1;
@@ -16,12 +16,11 @@
 }
 
 .navbar-lewagon .logo img {
-  width: 60px;
-  padding: 0px;
+  width: 40px;
+  margin-left: 8px;
 }
 
 .navbar-lewagon .logo {
-  color: $my-yellow;
   font-family: $headers-font;
   letter-spacing: 0.3em;
   font-size: 18px !important;
