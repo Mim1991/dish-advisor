@@ -12,7 +12,7 @@
   border: 5px solid #efac2c78;
   position: fixed;
   width: 100%;
-  height: 91.5%;
+  height: 92.5%;
   bottom: 0;
   z-index: 3;
   background-color: $background;
@@ -51,12 +51,13 @@
   align-items: center;
   width: 100%;
   margin-bottom: 16px;
-  padding-bottom: 29px;
+  padding-bottom: 10px;
   background-color: $card-colour;
   color: $my-green;
   position: sticky;
   top: 0;
   border-bottom: 3px solid #dbbab43d;
+  z-index: 10;
 }
 
 .rating-content-scores p{
@@ -132,10 +133,10 @@
  background-color: $my-yellow;
 }
 #two-colour {
- background-color: $my-white;
+ background-color: #7D98A1;
 }
 #one-colour {
- background-color: $my-green;
+ background-color: #8E5572;
 }
 
 .bar-container {
@@ -157,7 +158,9 @@
 .individual-review {
   padding: 25px 18px 9px 18px;
   background-color: $card-colour;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  // position: relative;
 }
 
 .review-user {
@@ -165,6 +168,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 14px;
+  padding-top: 14px;
   border-bottom: 3px solid #dbbab43d;
 }
 
@@ -178,10 +182,11 @@
 }
 
 .review-name a {
-  padding: 0px 17px;
+  padding: 0px 0px;
   letter-spacing: 2px;
   color: $my-green;
   text-decoration: none;
+  margin-left: 7px;
 }
 
 .review-nationality {
@@ -213,7 +218,7 @@
 }
 
 .review-title{
-  font-size: 30px;
+  font-size: 22px;
   letter-spacing: 2px;
   color: $my-green;
   margin-bottom: 0px;
@@ -221,6 +226,10 @@
 
 .review-content {
   color: #516360
+}
+
+.review-content p {
+  margin-top: 0.5rem;
 }
 
 .review-visit{
@@ -265,7 +274,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%;
+    height: 8%;
     background-color: #23423dde;
     width: 97%;
 }
@@ -291,16 +300,17 @@
 }
 
 .black {
-  padding: 12px 37px;
   background: #f1ebd8;
-  color: #988885;
+  color: #EFAC2C !important;
   font-size: 17px;
-  letter-spacing: 2px;
-  border: 4px solid #dbbab4;
-  font-family: Montserrat;
-  font-weight: 700;
   border-radius: 34px;
   margin-bottom: 0;
+  font-family: Montserrat;
+  font-weight: 700;
+  letter-spacing: 5px;
+  border: 2px solid #EFAC2C;
+  padding: 11px 74px;
+  border-radius: 34px;
 }
 
 .close-modal {
@@ -325,7 +335,31 @@
 
 
 .rating-content-scores h5 {
-  margin-top: 25px;
+  margin-top: 14px;
   font-family: "Castoro";
 }
+
+.seperator-center{
+  align-self: center;
+}
+
+.seperator-clear{
+  background-color: transparent !important;
+}
+
+.review-margin {
+  margin-bottom: -3px;
+  position: relative;
+}
+
+.critic-review {
+  border-top: 1px solid #EFAC2C;
+  border-bottom: 1px solid #EFAC2C;
+}
+
+.critic-tag-small{
+  width: 19%;
+  border-bottom-right-radius: 21px;
+}
+
 
