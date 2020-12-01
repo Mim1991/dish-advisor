@@ -1,27 +1,27 @@
 .restaurant-index-page h1 {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 15px;
-  letter-spacing: 0.3em;
   margin-bottom: 0px;
   color: #EFAC2C;
   font-weight: 700;
   letter-spacing: 3px;
-  margin-top: 27px;
+  font-family: $headers-font;
 }
 
 .search-container-restaurant {
   // display: flex;
-  margin: 5px;
+  margin: 0px;
   width: 100%;
   padding: 5px;
+  height: 55px;
 }
 
 .search-container-dish {
   // display: flex;
-  margin: 5px;
+  margin: 0px;
   width: 100%;
   padding: 5px;
+  height: 55px;
 }
 
 .restaurant-index-page a {
@@ -38,7 +38,11 @@
   margin-top: 16px;
 }
 
-
+#map {
+  text-align: center;
+  width: 100%;
+  margin-top: 16px;
+}
 .border-rest-card {
   border-bottom: 3px solid #dbbab43d;
   width: 75%;
@@ -78,6 +82,7 @@
 }
 
 .search-container {
-  padding-bottom: 15px;
+  margin-left: 0 auto;
+  padding-bottom: 5px;
   width: 100%;
 }
