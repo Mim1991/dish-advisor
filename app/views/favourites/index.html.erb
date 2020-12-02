@@ -8,45 +8,83 @@
     </li>
   </ul>
 </div>
-<div class="dashboard">
-  <div class="profile-banner">
-    <h1 class="heading">HELLO <%= current_user.first_name.upcase %>!</h1>
+
+<%= render 'shared/profile' %>
+
+
+    <!-- fill in from show page -->
+  <div class="favourite-dish-grid">
     <h2 class="sub-heading">YOUR FAVOURITES</h2>
-  </div>
-  <div class="user-favourites">
-    <div class="row" id="dashboard-row">
-      <% @favourite_dishes.each do |favourite| %>
-      <div class="col-sm-12">
-        <div class="dashboard-card">
-          <div class="dashboard-infos" id="fav-infos">
-          <div class="dish-title">
-            <%= link_to favourite.dish.name.upcase, restaurant_path(favourite.dish.restaurant.id, anchor: "#{favourite.dish.name.parameterize}") %>
-            <% if favourite.dish.dish_type == "Starter" %>
-              <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/1721/1721500.svg" alt="starter">
-            <% elsif favourite.dish.dish_type == "Main" %>
-              <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/3014/3014425.svg" alt="main">
-            <% elsif favourite.dish.dish_type == "Dessert" %>
-              <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/3111/3111148.svg" alt="dessert">
-            <% elsif favourite.dish.dish_type == "Drink" %>
-              <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/887/887320.svg" alt="drink">
-            <% end %>
-          </div>
-            <div class="dish-description">
-              <p><%= favourite.dish.description %></p>
-            </div>
-            <div class="favourite-button-links">
-              <%= link_to "REVIEW", new_dish_review_path(favourite.dish)%> | <%= link_to favourite_path(favourite), method: :delete, remote:true, class: "link" do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div>
-          </div>
+    <% @favourite_dishes.each do |favourite| %>
+      <div class="dish-card box-shadow-card individual-review" id="<%= favourite.dish.name.parameterize %>">
+        <div class="dish-name text-center">
+          <h2><%= favourite.dish.name %></h2>
+        </div>
+        <div class="dish-description">
+          <p><%= favourite.dish.restaurant.name %></p>
+        </div>
+        <div class="dish-description">
+          <p><%= favourite.dish.description %></p>
+        </div>
+        <div class="favourite-button-links">
+          <%= link_to "REVIEW", new_dish_review_path(favourite.dish)%> | <%= link_to favourite_path(favourite), method: :delete, remote:true, class: "link" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="user-favourites">
+    <div class="row" id="dashboard-row">
+      <% @favourite_dishes.each do |favourite| %>
+        <div class="col-sm-12">
+          <div class="dashboard-card">
+            <div class="dashboard-infos" id="fav-infos">
+            <div class="dish-title">
+              <%= link_to favourite.dish.name.upcase, restaurant_path(favourite.dish.restaurant.id, anchor: "#{favourite.dish.name.parameterize}") %>
+              <% if favourite.dish.dish_type == "Starter" %>
+                <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/1721/1721500.svg" alt="starter">
+              <% elsif favourite.dish.dish_type == "Main" %>
+                <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/3014/3014425.svg" alt="main">
+              <% elsif favourite.dish.dish_type == "Dessert" %>
+                <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/3111/3111148.svg" alt="dessert">
+              <% elsif favourite.dish.dish_type == "Drink" %>
+                <img class="dish-icon" src="https://www.flaticon.com/svg/static/icons/svg/887/887320.svg" alt="drink">
+              <% end %>
+            </div>
+              <div class="dish-description">
+                <p><%= favourite.dish.description %></p>
+              </div>
+              <div class="favourite-button-links">
+                <%= link_to "REVIEW", new_dish_review_path(favourite.dish)%> | <%= link_to favourite_path(favourite), method: :delete, remote:true, class: "link" do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div> -->
 </div>
+
 
 
 <!-- <div class="dashboard">
