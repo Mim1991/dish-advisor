@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     @ip = request.remote_ip
     @user_location = JSON.parse(open("http://iplocate.io/api/lookup/#{@ip}").read)
     @coordinates = [@user_location['latitude'], @user_location['longitude']]
-    @coordinates = [51.529, -0.06]
+    # @coordinates = [51.529, -0.06]
     @restaurants = Restaurant.near(@coordinates, 10)
     @dishes = @restaurants.map { |r| r.dishes }.flatten
     @markers = @restaurants.geocoded.map do |restaurant|
