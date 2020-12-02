@@ -1,28 +1,31 @@
 Restaurant.destroy_all
 puts "Creating some restaurants"
 
-restaurant = Restaurant.new(
-  name: 'Bao Soho',
-  cuisine: 'Taiwanese',
-  address: 'Soho, London',
-  website: 'www.baolondon.com',
-  phone_number: '02075671234'
-)
+# restaurant = Restaurant.new(
+#   name: 'Bao Soho',
+#   cuisine: 'Taiwanese',
+#   address: 'Soho, London',
+#   website: 'www.baolondon.com',
+#   phone_number: '02075671234'
+# )
 new_restaurant = Restaurant.new(
   name: 'Bao Soho',
   cuisine: 'Taiwanese',
   address: 'London, E13 0HB',
   website: 'www.baolondon.com',
-  phone_number: '02075671234'
+  phone_number: '02075671234',
 )
-  restaurant.save!
+require "open-uri"
+file = URI.open('https://res.cloudinary.com/dh6gdchfj/image/upload/v1606929650/bao-interior_tq50qf.jpg')
+new_restaurant.photo.attach(io: file, filename: 'baophoto.png', content_type: 'image/jpg')
+  new_restaurant.save!
   puts 'Created Restaurant'
   10.times do
     dish = Dish.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
       allergen: ['Gluten', 'Eggs', 'Nuts', 'Shellfish', 'Soya'].sample,
-      restaurant: restaurant,
+      restaurant: new_restaurant,
       dish_type: ['Starter', 'Main', 'Dessert', 'Drink'].sample
     )
     dish.save!
