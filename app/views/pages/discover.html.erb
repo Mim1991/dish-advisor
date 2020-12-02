@@ -39,10 +39,10 @@ trackUserLocation: true
             <div class="dashboard-card">
               <div class="dashboard-infos carousel-margin" id="fav-infos">
                 <div class="dish-title centering-text">
+                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
-                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
@@ -60,7 +60,7 @@ trackUserLocation: true
             <div class="dashboard-card">
               <div class="dashboard-infos carousel-margin" id="fav-infos">
                 <div class="dish-title centering-text">
-                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> | <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
                 </div>
@@ -80,7 +80,7 @@ trackUserLocation: true
             <div class="dashboard-card">
               <div class="dashboard-infos carousel-margin" id="fav-infos">
                 <div class="dish-title centering-text">
-                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> | <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
                 </div>
