@@ -1,3 +1,8 @@
+.discover-container, .map-container {
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+
 .discover-container h1 {
   text-align: center;
   text-transform: uppercase;
@@ -12,7 +17,13 @@
   // background-image: none !important;
 }
 
-.featured-card {
-  margin: 20px;
-  height: 100px;
+.dashboard-card {
+  // margin: 20px;
+  // height: 100px;
+  border-bottom: none;
+}
+
+#featured-card {
+  min-height: 180px;
+  border-bottom: 1px solid #23423D;
 }
