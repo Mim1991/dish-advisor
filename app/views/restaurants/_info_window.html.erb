@@ -1,2 +1,6 @@
-<h2><%= restaurant.name %>Hello</h2>
-<p><%= restaurant.address %></p>
+<div class="pop-up">
+  <%= link_to restaurant_path(restaurant) do %>
+    <h1><%= restaurant.name %></h1>
+    <p><%= restaurant.address %></p>
+    <% end %>
+</div>
