@@ -1,14 +1,12 @@
-
-  <h1><%= @coordinates %></h1>
-  <h2><%= request.location.city %> </h2>
-  <h3><%= request.location %></h3>
-<div class="discover-container">
+<div class="map-container">
   <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+       data-center="<%= @coordinates.to_json %>">
   </div>
 </div>
+
 
 <!-- <div id="map"></div> -->
 <!-- <script>
@@ -31,86 +29,78 @@ trackUserLocation: true
 })
 );
 </script> -->
-
-<h2 class="sub-heading">FEATURED DISHES</h2>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row" id="dashboard-row">
-        <% @dishes.sample(1).each do |dish| %>
-          <div class="col-sm-12">
-            <div class="dashboard-card">
-              <div class="dashboard-infos" id="fav-infos">
-              <div class="dish-title">
-                <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
-              </div>
-                <div class="dish-description">
-                  <p><%= dish.description %></p>
+<div class="discover-container">
+  <h2 class="sub-heading">DISHES NEAR YOU</h2>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" id="featured-card">
+      <div class="carousel-item active">
+        <div class="row" id="dashboard-row">
+          <% @dishes.sample(1).each do |dish| %>
+            <div class="col-sm-12">
+              <div class="dashboard-card">
+                <div class="dashboard-infos" id="fav-infos">
+                  <div class="dish-title">
+                    <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> | <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  </div>
+                  <div class="dish-description">
+                    <p><%= dish.description %></p>
+                  </div>
                 </div>
-                <div class="favourite-button-links">
-                  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
-                    <i class="far fa-heart"></i>
-                  <% end %>
-                </div>
-              </div>
               </div>
             </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="carousel-item">
-      <div class="row" id="dashboard-row">
-        <% @dishes.sample(1).each do |dish| %>
-          <div class="col-sm-12">
-            <div class="dashboard-card">
-              <div class="dashboard-infos" id="fav-infos">
-              <div class="dish-title">
-                <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
-              </div>
-                <div class="dish-description">
-                  <p><%= dish.description %></p>
+      <div class="carousel-item">
+        <div class="row" id="dashboard-row">
+          <% @dishes.sample(1).each do |dish| %>
+            <div class="col-sm-12">
+              <div class="dashboard-card">
+                <div class="dashboard-infos" id="fav-infos">
+                  <div class="dish-title">
+                    <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> | <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  </div>
+                  <div class="dish-description">
+                    <p><%= dish.description %></p>
+                  </div>
                 </div>
-                <div class="favourite-button-links">
-                  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
-                    <i class="far fa-heart"></i>
-                  <% end %>
-                </div>
-              </div>
               </div>
             </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <div class="row" id="dashboard-row">
-        <% @dishes.sample(1).each do |dish| %>
-          <div class="col-sm-12">
-            <div class="dashboard-card">
-              <div class="dashboard-infos" id="fav-infos">
-              <div class="dish-title">
-                <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
-              </div>
-                <div class="dish-description">
-                  <p><%= dish.description %></p>
+      <div class="carousel-item">
+        <div class="row" id="dashboard-row">
+          <% @dishes.sample(1).each do |dish| %>
+            <div class="col-sm-12">
+              <div class="dashboard-card">
+                <div class="dashboard-infos" id="fav-infos">
+                  <div class="dish-title">
+                    <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> | <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  </div>
+                  <div class="dish-description">
+                    <p><%= dish.description %></p>
+                  </div>
                 </div>
-                <div class="favourite-button-links">
-                  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
-                    <i class="far fa-heart"></i>
-                  <% end %>
-                </div>
-              </div>
               </div>
             </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>

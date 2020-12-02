@@ -1,0 +1,22 @@
+.bar-user-container {
+ background-color: $my-white;
+ width: 50%;
+  height: 10%;
+}
+
+.bar-colour-user{
+ background-color: yellow;
+ border-top-right-radius: 20px;
+ border-bottom-right-radius: 20px;
+ width: 70%;
+ height: 16px;
+}
+
+.center-bar{
+  justify-content: center;
+}
+
+.reviews-to-go p {
+  margin-top: 5px;
+  color: $my-green;
+}

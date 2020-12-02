@@ -1,4 +1,13 @@
+
+# config/meta.yml
+
+# meta_product_name: "Dish Advisor"
+# meta_title: "Dish Advisor - Review your Meal"
+# meta_description: "Review your meal so that friends can have a great experience."
+# meta_image: "brooke-lark-wMzx2nBdeng-unsplashcopy.jpg" # should exist in `app/assets/images/`
+
 meta_product_name: "Dish Advisor"
 meta_title: "Dish Advisor - The right choice for your palate"
 meta_description: "Use Dish Advisor to fine best dishes on a menu and eliminate food envy for good"
 meta_image: "<%= cl_image_tag ('logook_xsnhrb') %>" # should exist in `app/assets/images/`
+
