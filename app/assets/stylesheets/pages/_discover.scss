@@ -1,0 +1,18 @@
+.discover-container h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  color: #EFAC2C;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-family: $headers-font;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  // background-image: none !important;
+}
+
+.featured-card {
+  margin: 20px;
+  height: 100px;
+}
