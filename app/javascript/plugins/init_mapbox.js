@@ -21,6 +21,7 @@ const initMapbox = () => {
         style: 'mapbox://styles/gyggeaka/cki7ceb0taesv19o55piy4oow'
       });
       const markers = JSON.parse(mapElement.dataset.markers);
+      console.log(markers)
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
         const element = document.createElement('div');
@@ -31,7 +32,7 @@ const initMapbox = () => {
         element.style.height = '35px';
         new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
-         .setPopup(popup) // add this
+        .setPopup(popup) // add this
         .addTo(map);
       });
     } else {
