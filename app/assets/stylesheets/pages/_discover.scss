@@ -1,3 +1,8 @@
+.map-container{
+  margin-top: -14px;
+  height: 72vh;
+}
+
 .discover-container, .map-container {
   margin-bottom: 10px;
 }
@@ -46,8 +51,8 @@
 }
 
 .carousel-margin{
-padding-left: 5px;
-padding-right: 5px;
+padding-left: 22px !important;
+padding-right: 22px !important;
 }
 
 .centering-text p{
@@ -57,3 +62,11 @@ padding-right: 5px;
 .centering-text {
   text-align: center;
 }
+
+
+.fa-heart {
+  font-size: 19px;
+  margin-left: 2px;
+}
+
+
