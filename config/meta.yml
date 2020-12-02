@@ -1,4 +1,4 @@
 meta_product_name: "Dish Advisor"
 meta_title: "Dish Advisor - The right choice for your palate"
 meta_description: "Use Dish Advisor to fine best dishes on a menu and eliminate food envy for good"
-meta_image: "<%= cl_image_tag ('logoandwriteok2.png') %>" # should exist in `app/assets/images/`
+meta_image: "logoandwriteok2.png" # should exist in `app/assets/images/`
