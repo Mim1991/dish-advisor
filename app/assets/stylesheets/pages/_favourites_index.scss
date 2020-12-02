@@ -29,7 +29,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 
@@ -82,7 +81,7 @@
   justify-content: space-around;
   align-items: center;
   width: 90%;
-  margin: 20px 0px 24px 0px;
+  margin: 5px 0px 24px 0px;
   padding: 5px 0px 0px 0px;
 }
 
@@ -177,10 +176,30 @@
   justify-content: center;
 }
 
+.level-up{
+  width: 100%;
+  margin-top: 10px;
+}
 
+.level-up p{
+  margin-bottom: 0;
+}
 
+.level-padding{
+  padding-left: 5px;
+}
 
+#level-left{
+  margin-left: 5px;
+  width: auto;
+  color: $my-yellow;
+  padding-right: 10px;
+}
 
+#level-right {
+  color: $my-yellow;
+  padding-right: 5px;
+}
 
 
 
