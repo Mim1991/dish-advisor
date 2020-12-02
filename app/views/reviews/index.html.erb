@@ -12,7 +12,47 @@
 
   <%= render 'shared/profile' %>
 
-  <div class="user-favourites">
+  <div class="favourite-dish-grid">
+    <h2 class="sub-heading">YOUR REVIEWS</h2>
+    <% @user.reviews.order(created_at: :desc).each do |review| %>
+      <% if review.rating == 5 %>
+        <div class="dish-card box-shadow-card individual-review user-review-five" id="<%= review.dish.name.parameterize %>">
+      <% else  %>
+        <div class="dish-card box-shadow-card individual-review" id="<%= review.dish.name.parameterize %>">
+      <% end %>
+        <div class="dish-name-link text-center">
+          <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %>
+        </div>
+        <div class="dish-description">
+          <p><%= review.dish.restaurant.name.upcase %></p>
+        </div>
+        <div class="dish-description">
+          <p><%= review.content %></p>
+        </div>
+        <div class="dish-rating-icons-size">
+          <p id="rating-margin"><%="🍴" * review.rating %></p>
+        </div>
+        <p class="review-visit date-visit-padding"><%= review.created_at.strftime("%b %d, %Y") %></p>
+        <div class="favourite-button-links">
+          <%= link_to review_path(review), method: :delete, remote:true, class: "link" do %>
+              <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="user-favourites">
     <h2 class="sub-heading">YOUR REVIEWS</h2>
     <div class="row" id="dashboard-row">
       <% @user.reviews.order(created_at: :desc).each do |review| %>
@@ -40,8 +80,7 @@
       </div>
       <% end %>
     </div>
-  </div>
-</div>
+  </div> -->
 <% else %>
   <!-- <div class="tabs">
     <ul class="list-inline tabs-underlined">
@@ -60,8 +99,8 @@
     <div class="profile-banner">
       <h1 class="heading"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %>'s </h1>
       <h2 class="sub-heading">RECENT REVIEWS</h2>
-  </div>
-    <%= render 'shared/external_profile' %>
+    </div>
+      <%= render 'shared/external_profile' %>
     <div class="user-favourites">
       <div class="row" id="dashboard-row">
         <% @user.reviews.order(created_at: :desc).each do |review| %>

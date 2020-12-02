@@ -29,6 +29,7 @@ import { initModal } from '../pages/restaurant_show'
 import { initTopRated } from '../pages/restaurant_show'
 import { initMostReviews } from '../pages/restaurant_show'
 import { initCriticChoice } from '../pages/restaurant_show'
+import { topUserRev } from '../pages/restaurant_show'
 // import { initCriticReview } from '../pages/restaurant_show'
 
 
@@ -50,6 +51,7 @@ document.addEventListener('turbolinks:load', () => {
   initTopRated();
   initMostReviews();
   initCriticChoice();
+  topUserRev();
   // initCriticReview();
   expand();
 })
