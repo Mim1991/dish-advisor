@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :first_name, uniqueness: { scope: :last_name }
 
   def find_emoji
-    country = ISO3166::Country.find_country_by_name(nationality)
+    country = ISO3166::Country.find_country_by_alpha2(nationality)
     if country
       country.emoji_flag
     else
