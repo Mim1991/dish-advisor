@@ -9,32 +9,40 @@ const initMapbox = () => {
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
-    const coordinates = JSON.parse(mapElement.dataset.coordinates);
+    const coordinates = JSON.parse(mapElement.dataset.center);
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     if (coordinates) {
       const map = new mapboxgl.Map({
         container: 'map',
-        center: coordinates,
+        center: [coordinates[1], coordinates[0]],
         zoom: 13,
         style: 'mapbox://styles/mapbox/streets-v10'
+      });
+      const markers = JSON.parse(mapElement.dataset.markers);
+      markers.forEach((marker) => {
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .addTo(map);
       });
     } else {
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10'
       });
-    }
-
-
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);
-    });
-    if (coordinates == null) {
+      const markers = JSON.parse(mapElement.dataset.markers);
+      markers.forEach((marker) => {
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .addTo(map);
+      });
       fitMapToMarkers(map, markers);
     }
+
+
+
+    // if (coordinates == null) {
+    //   fitMapToMarkers(map, markers);
+    // }
   };
 };
 
