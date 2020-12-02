@@ -15,6 +15,16 @@ const initTopRated = () => {
   }
 }
 
+const topUserRev= () => {
+  const topUserRev = document.querySelectorAll(".user-review-five")
+  if(topUserRev){
+    topUserRev.forEach((dishCard) =>{
+      dishCard.classList.add('top-rated-dish')
+      dishCard.insertAdjacentHTML('afterBegin', '<div class="most-reviewed-position user-five-star"><p><i class="fas fa-crown" id="flag-colour-size"></i>Top Review</p></div>')
+    })
+  }
+}
+
 const initMostReviews = () => {
   const mostRevDish = document.querySelector(".most-reviews-dish")
   if(mostRevDish){
@@ -105,4 +115,5 @@ export { initModal }
 export { initTopRated }
 export { initMostReviews }
 export { initCriticChoice }
+export { topUserRev }
 // export { initCriticReview }

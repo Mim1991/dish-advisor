@@ -147,10 +147,12 @@
               <% end %>
               <div class="review-user">
                 <div class="title-positioning">
-                  <% if review.user.photo.attached? %>
-                    <%= cl_image_tag(review.user.photo.key, crop: :thumb, gravity: :face, class: "avatar") %>
-                  <% else %>
-                   <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar"%>
+                  <%= link_to user_reviews_path(review.user) do %>
+                    <% if review.user.photo.attached? %>
+                      <%= cl_image_tag(review.user.photo.key, crop: :thumb, gravity: :face, class: "avatar") %>
+                    <% else %>
+                      <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar"%>
+                    <% end %>
                   <% end %>
                   <p class="review-name"><%= link_to user_reviews_path(review.user) do %>
                     <%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %>
