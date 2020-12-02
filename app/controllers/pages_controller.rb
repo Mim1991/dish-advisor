@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   end
 
   def discover
-
     # @ip = request.remote_ip
     # @user_location = JSON.parse(open("http://iplocate.io/api/lookup/#{@ip}").read)
     # @coordinates = [@user_location['latitude'], @user_location['longitude']]
