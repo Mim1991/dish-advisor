@@ -11,19 +11,17 @@
                 input_html: { autocomplete: "first-name" }%>
     <%= f.input :last_name,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "last-name" }%>
     <%= f.input :nationality,
+                as: :country,
+                priority: ["GB", "PT", "IT"],
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "nationality" }%>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :critic,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "critic" }%>
     <%= f.input :password,
                 required: true,
