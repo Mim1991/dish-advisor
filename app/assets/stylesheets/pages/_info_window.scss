@@ -1,3 +1,51 @@
 .pop-up {
   width: 150px;
 }
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.map-container{
+  margin-top: -14px;
+  height: 73vh;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $card-colour !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 29px 29px !important;
+  border-radius: 5px;
+}
+
+.pop-up h1 {
+  color: #516360;
+  font-size: 1.2rem;
+  font-family: 'Castoro', sans-serif !important;
+  letter-spacing: 0.3em;
+  border-bottom: 3px solid #dbbab43d;
+  margin-bottom: 14px;
+  padding-bottom: 3px;
+}
+
+.pop-up p{
+  margin-bottom: 0px;
+  font-family: 'Castoro', sans-serif !important;
+  font-size: 1rem;
+  color: #516360;
+
+}
+
+.pop-up a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+  &:focus{
+    text-decoration: none;
+  }
+}
