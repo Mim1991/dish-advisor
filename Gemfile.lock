@@ -282,7 +282,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
   countries
-  country_select
+  country_select (~> 4.0)
   devise
   dotenv-rails
   faker
