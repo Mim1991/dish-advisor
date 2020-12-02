@@ -1,5 +1,69 @@
 import mapboxgl from 'mapbox-gl';
 
+
+export { initMapbox };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   const fitMapToMarkers = (map, markers) => {
@@ -32,5 +96,3 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   };
 };
-
-export { initMapbox };
