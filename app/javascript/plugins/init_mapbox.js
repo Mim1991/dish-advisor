@@ -10,7 +10,6 @@ const initMapbox = () => {
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
-    const coordinates = JSON.parse(mapElement.dataset.center);
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   // if  Jess to insert here
   if (mapElement.dataset.center) {
