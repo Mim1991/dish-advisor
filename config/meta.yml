@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Dish Advisor"
+meta_title: "Dish Advisor - Review your Meal"
+meta_description: "Review your meal so that friends can have a great experience."
+meta_image: "brooke-lark-wMzx2nBdeng-unsplash.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
