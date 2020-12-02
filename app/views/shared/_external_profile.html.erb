@@ -1,6 +1,8 @@
   <div class="profile-photo">
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag(current_user.photo.key, crop: :thumb, gravity: :face, class: "avatar profile-pic-critic") %>
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag(@user.photo.key, crop: :thumb, gravity: :face, class: "avatar profile-pic-critic") %>
+    <% else %>
+      <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar profile-pic-critic"%>
     <% end %>
   </div>
 
@@ -15,6 +17,8 @@
       <div class="ach-style ach-three"><i class="fas fa-utensils" id="knife"></i>L3: SOUS CHEF</div>
     <% elsif @user.reviews.count < 10 %>
       <div class="ach-style ach-four"><i class="fas fa-gem" id="head-chef"></i>L4: HEAD CHEF</div>
+    <% elsif @user.reviews.count > 10 %>
+      <div class="ach-style ach-five"><i class="fas fa-bolt" id="bolt"></i></i>L5: EXEC CHEF</div>
     <% end %>
   </div>
 
