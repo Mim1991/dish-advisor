@@ -1,12 +1,15 @@
-.heading, .sub-heading {
+.heading {
   text-align: center;
-  color: $my-green;
+  color: $my-yellow;
   font-weight: bold;
 }
 
 .sub-heading {
   margin-bottom: 0;
   font-size: 28px;
+  text-align: center;
+  color: $my-green;
+  font-weight: bold;
 }
 
 .dish-icon {
@@ -21,3 +24,109 @@
 .link {
   grid-row: 2/3;
 }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.dashboard-card {
+  overflow: hidden;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $my-green
+}
+
+.dashboard-card img {
+  height: 32px;
+  width: auto;
+  object-fit: cover;
+}
+
+.dashboard-infos a {
+  text-decoration: none;
+  font-size: 20px;
+  color: $my-yellow;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-infos p {
+  font-size: 17px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 3px;
+  color: $my-green;
+  text-align: left;
+}
+
+
+.favourite-dish-grid{
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  margin-top: 0px;
+}
+
+.user-stats{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 20px 0px 38px 0px;
+  padding: 5px 0px 0px 0px;
+}
+
+.us-one {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.user-stats h2{
+  font-size: 2.5rem;
+  color: $my-yellow;
+  font-weight: 700;
+
+}
+
+.user-stats p{
+  color: $my-green;
+}
+
+.dish-disco p{
+  font-size: 12px;
+  text-align: center;
+}
+
+.us-two{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.us-two h2 {
+  font-size: 80px;
+}
+
+.us-three {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%
+}
+
+
+

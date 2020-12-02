@@ -1,30 +1,31 @@
-<div class ="page-container", style="background-image: url('https://res.cloudinary.com/dh6gdchfj/image/upload/v1606478480/brooke-lark-wMzx2nBdeng-unsplash_y2wxgy.jpg'); position: relative; top: -93px">
-  <div class="search-container", style="position: relative; top: 350px">
+<div class ="page-container", style="background-image: url('https://res.cloudinary.com/dh6gdchfj/image/upload/v1606478480/brooke-lark-wMzx2nBdeng-unsplash_y2wxgy.jpg'); position: relative; top: -64px">
+  <div class="logo2">
+    <%= cl_image_tag ('logoandwriteok2_sl5bvk') %>
+  </div>
+  <div class="search-container", style="position: relative;">
     <div class="search-container-restaurant">
-      <div class="btn-search-home" id="restaurant-button">Restaurant</div>
+      <div class="btn-search-home" id="restaurant-button">SEARCH RESTAURANTS</div>
       <div class="search-bar-restaurant hidden">
         <%= form_tag restaurants_path, method: :get do %>
           <%= text_field_tag :query1,
           params[:query1],
-          class: "form_control form-search form-search-colour", id: "form-button-search",
-          placeholder: "Search"
+          class: "form_control form-search form-search-colour", id: "form-button-search-restaurant",
+          placeholder: "Search", html:{ autocomplete: "off" }
           %>
         <% end %>
       </div>
    </div>
 
     <div class="search-container-dish">
-      <div class="btn-search-home" id="dish-button">Dish</div>
+      <div class="btn-search-home" id="dish-button">SEARCH DISHES</div>
       <div class="search-bar-dishes hidden">
         <%= form_tag dishes_path, method: :get do %>
           <%= text_field_tag :query2,
           params[:query2],
-          class: "form_control form-search form-search-colour", id: "form-button-search",
-          placeholder: "Search"
+          class: "form_control form-search form-search-colour", id: "form-button-search-dish",
+          placeholder: "Search", html:{ autocomplete: "off" }
           %>
         <% end %>
       </div>
     </div>
   </div>
-
-
