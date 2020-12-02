@@ -19,4 +19,5 @@ class User < ApplicationRecord
       nationality.upcase
     end
   end
+
 end

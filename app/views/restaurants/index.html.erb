@@ -1,8 +1,9 @@
 <div class="restaurant-index-page">
+  <div class="padding-page">
   <h1>Restaurants</h1>
   <div class="search-container">
     <div class="search-container-restaurant">
-      <div class="btn-search-home" id="restaurant-button">Search by Restaurant</div>
+      <div class="btn-search-home" id="restaurant-button">SEARCH RESTAURANTS</div>
       <div class="search-bar-restaurant hidden">
         <%= form_tag restaurants_path, method: :get do %>
           <%= text_field_tag :query1,
@@ -15,7 +16,7 @@
    </div>
 
    <div class="search-container-dish">
-      <div class="btn-search-home" id="dish-button">Search by Dish</div>
+      <div class="btn-search-home btn-margin" id="dish-button">SEARCH DISHES</div>
       <div class="search-bar-dishes hidden">
         <%= form_tag dishes_path, method: :get do %>
           <%= text_field_tag :query2,
@@ -32,7 +33,7 @@
     <p>Your search does not return a valid result, explore our best restaurants</p>
   <% else %>
     <div class="restaurant-card">
-      <div id="map"
+      <div id="map" class="map-margin-top"
          style="width: 100%; height: 300px; padding: 15px;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -62,5 +63,6 @@
       </div>
       <% end %>
   <% end %>
+ </div>
  </div>
 </div>
