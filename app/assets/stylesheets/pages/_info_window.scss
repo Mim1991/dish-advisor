@@ -1,8 +1,8 @@
 .pop-up {
-  width: 150px;
+  width: 100%;
 }
 .mapboxgl-popup {
-  max-width: 700px !important;
+
 }
 
 
@@ -17,6 +17,7 @@
   justify-content: center;
   padding: 29px 29px !important;
   border-radius: 5px;
+  max-width: 700px !important;
 }
 
 .pop-up h1 {
