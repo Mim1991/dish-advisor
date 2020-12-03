@@ -44,11 +44,26 @@
 .navbar-nav .nav-item .nav-link {
   color: $my-yellow !important;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .navbar-toggler {
   border: none;
   width: 50px;
   height: 50px;
+}
+
+.nav-item {
+    padding: 4px;
+
+}
+
+.nav-seperate {
+    border-bottom: #efac2c 1px solid;
+    width: 5%;
+}
+
+.navbar-nav {
+  align-items: center;
 }
 
