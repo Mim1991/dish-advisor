@@ -66,6 +66,9 @@ trackUserLocation: true
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  <div class=“dish-rating-icons-size”>
+                    <p><%= "🍴" * dish.average_review %></p>
+                  </div>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
@@ -86,6 +89,9 @@ trackUserLocation: true
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  <div class=“dish-rating-icons-size”>
+                    <p><%= "🍴" * dish.average_review %></p>
+                  </div>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
@@ -106,6 +112,9 @@ trackUserLocation: true
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  <div class=“dish-rating-icons-size”>
+                    <p><%= "🍴" * dish.average_review %></p>
+                  </div>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
@@ -126,6 +135,9 @@ trackUserLocation: true
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  <div class=“dish-rating-icons-size”>
+                    <p><%= "🍴" * dish.average_review %></p>
+                  </div>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
@@ -146,6 +158,9 @@ trackUserLocation: true
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  <div class=“dish-rating-icons-size”>
+                    <p><%= "🍴" * dish.average_review %></p>
+                  </div>
                 </div>
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
