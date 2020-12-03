@@ -135,7 +135,7 @@ trackUserLocation: true
             <div class="dashboard-card">
               <div class="dashboard-infos carousel-margin" id="fav-infos">
                 <div class="dish-title centering-text">
-                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %> 
+                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
