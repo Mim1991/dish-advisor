@@ -28,7 +28,7 @@ class PagesController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        image_url: helpers.asset_url('forkok copy.png')
+        image_url: helpers.asset_url('pin1 copy.png')
       }
     end
   end
