@@ -18,7 +18,7 @@ const initMapbox = () => {
         container: 'map',
         center: [coordinates[1], coordinates[0]],
         zoom: 13,
-        style: 'mapbox://styles/gyggeaka/cki7ceb0taesv19o55piy4oow'
+        style: 'mapbox://styles/gyggeaka/cki93bnfh9ycm19lrg3hll1q2'
       });
       const markers = JSON.parse(mapElement.dataset.markers);
       console.log(markers)
@@ -39,7 +39,7 @@ const initMapbox = () => {
   // else
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/gyggeaka/cki7ceb0taesv19o55piy4oow',
+      style: 'mapbox://styles/gyggeaka/cki93bnfh9ycm19lrg3hll1q2',
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
