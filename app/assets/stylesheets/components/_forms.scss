@@ -7,3 +7,28 @@
   font-family: $form-font;
   font-size: 18px;
 }
+
+.review-head {
+  color: $my-yellow;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 4px;
+}
+
+.review-name {
+  font-family: Castoro;
+  font-size: 21px;
+  margin-top: 24px;
+  font-weight: 600;
+  color: #23423D;
+  letter-spacing: 5px;
+}
+
+#button-centering{
+  flex-direction: column;
+}
+
+label {
+  font-family: Castoro !important;
+  color: $my-green;
+}

@@ -3,8 +3,11 @@
   border: 1px solid $my-green;
   font-family: $form-font;
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 40px;
   padding: 12px 19px;
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 
@@ -55,7 +58,10 @@
   background-color: $my-green;
   border: 1px solid $my-green;
   padding: 12px 19px;
-  border-radius: 5px;
+  border-radius: 40px;
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
 }
 
 .back-button a {
@@ -74,7 +80,7 @@
   background-color: $my-green;
   font-family: $headers-font;
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 70px;
   padding: 8px 8px;
   text-align: center;
 }
@@ -93,7 +99,7 @@
   background-color: $my-green;
   font-family: $headers-font;
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 55px;
   padding: 8px 8px;
   text-decoration: none;
   height: 40px;
@@ -102,7 +108,7 @@
 
 .login a{
   color: $white !important;
-  font-size: 14px;
+  font-size: 19px;
 }
 
 .sign-up-centering{
@@ -130,3 +136,5 @@
   color: black !important;
   font-size: 12px;
 }
+
+
