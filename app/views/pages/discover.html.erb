@@ -47,9 +47,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
+                <div class="heart-position">
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -71,9 +73,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
+                <div class="heart-position">
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -95,9 +99,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
+                <div class="heart-position">
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -119,9 +125,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
+                  <div class="heart-position">
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  </div>
               </div>
             </div>
           </div>
@@ -143,9 +151,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
-                  <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                  <div class="heart-position">
+                  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                  </div>
               </div>
             </div>
           </div>
@@ -167,9 +177,11 @@ trackUserLocation: true
                 <div class="dish-description centering-text">
                   <p><%= dish.description %></p>
                 </div>
+                <div class="heart-position">
                   <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
+                </div>
               </div>
             </div>
           </div>
