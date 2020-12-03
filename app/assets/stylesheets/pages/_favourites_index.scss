@@ -29,7 +29,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 
@@ -82,7 +81,7 @@
   justify-content: space-around;
   align-items: center;
   width: 90%;
-  margin: 20px 0px 38px 0px;
+  margin: 5px 0px 24px 0px;
   padding: 5px 0px 0px 0px;
 }
 
@@ -91,6 +90,7 @@
   flex-direction: column;
   align-items: center;
   width: 30%;
+  margin-top: -6px;
 }
 
 .user-stats h2{
@@ -127,6 +127,85 @@
   align-items: center;
   width: 30%
 }
+
+.dish-name-link {
+  width: 97%;
+  margin-bottom: 8px;
+  border-bottom: 3px solid #dbbab43d;
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+
+.dish-name-link a {
+  font-size: 21px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: $my-green;
+  font-family: "Castoro";
+}
+
+.dish-name-link a:hover{
+  text-decoration: none;
+}
+
+#profile-color {
+  color: $my-yellow;
+}
+
+
+.user-five-star{
+  background-color: $my-yellow;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+// .favourite-button-links{
+//   display:flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   align-items: center;
+// }
+
+.review-user-link{
+  display: flex;
+}
+
+.delete-favourite-can{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.level-up{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.level-up p{
+  margin-bottom: 0;
+}
+
+.level-padding{
+  padding-left: 5px;
+}
+
+#level-left{
+  margin-left: 5px;
+  width: auto;
+  color: $my-yellow;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+#level-right {
+  color: $my-yellow;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding-right: 5px;
+}
+
+
 
 
 

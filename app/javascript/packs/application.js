@@ -29,6 +29,9 @@ import { initModal } from '../pages/restaurant_show'
 import { initTopRated } from '../pages/restaurant_show'
 import { initMostReviews } from '../pages/restaurant_show'
 import { initCriticChoice } from '../pages/restaurant_show'
+import { topUserRev } from '../pages/restaurant_show'
+import { levelUp } from '../pages/favourite_show'
+import { discoverFav } from '../pages/discover'
 // import { initCriticReview } from '../pages/restaurant_show'
 
 
@@ -50,8 +53,11 @@ document.addEventListener('turbolinks:load', () => {
   initTopRated();
   initMostReviews();
   initCriticChoice();
+  topUserRev();
+  levelUp();
   // initCriticReview();
   expand();
+  discoverFav();
 })
 
 

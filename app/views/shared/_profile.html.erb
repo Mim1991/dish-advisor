@@ -3,33 +3,53 @@
 <div class="dashboard">
 
   <div class="profile-banner">
-    <h1 class="heading">HELLO <%= @user.first_name.upcase %>!</h1>
+    <h1 class="heading" id="profile-color">HELLO <%= @user.first_name.upcase %>!</h1>
 
   </div>
 
   <div class="profile-photo">
     <% if current_user.photo.attached? %>
       <%= cl_image_tag(current_user.photo.key, crop: :thumb, gravity: :face, class: "avatar profile-pic-critic") %>
+    <% else %>
+      <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar profile-pic-critic"%>
     <% end %>
   </div>
 
   <div class="achievements">
     <% if @user.critic? %>
       <div class="ach-style ach-critic"><i class="fas fa-pen-nib" id="flag-colour-size" style="margin-bottom: 4px;"></i>CRITIC</div>
-    <% elsif @user.reviews.count < 2%>
+    <% elsif @user.reviews.count < 3%>
       <div class="ach-style ach-one"><i class="fas fa-hand-sparkles" id="hand-spark"></i>L1: PORTER</div>
-    <% elsif @user.reviews.count < 5 %>
+    <% elsif @user.reviews.count < 6 %>
       <div class="ach-style ach-two"><i class="fas fa-graduation-cap" id="grad-cap"></i>L2: COMMIS CHEF</div>
-    <% elsif @user.reviews.count < 8 %>
+    <% elsif @user.reviews.count < 9 %>
       <div class="ach-style ach-three"><i class="fas fa-utensils" id="knife"></i>L3: SOUS CHEF</div>
-    <% elsif @user.reviews.count < 10 %>
+    <% elsif @user.reviews.count < 12 %>
       <div class="ach-style ach-four"><i class="fas fa-gem" id="head-chef"></i>L4: HEAD CHEF</div>
+    <% elsif @user.reviews.count > 12 %>
+      <div class="ach-style ach-five"><i class="fas fa-bolt" id="bolt"></i></i>L5: EXEC CHEF</div>
     <% end %>
+  </div>
+
+  <div class="level-up">
+    <div class="number-stars center-bar">
+      <p id="level-left">LV1</p>
+      <div class="bar-user-container">
+          <div class="bar-colour-user" id="level-colour"></div>
+      </div>
+      <div class="rating-count-star level-padding">
+        <p id="level-right">LV2</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-to-go">
+    <p><span id="reviews-left">3</span> reviews to your next badge</p>
   </div>
 
   <div class="user-stats box-shadow-card individual-review">
     <div class="us-one">
-      <div class="rev-count">
+      <div class="rev-count level-padding">
         <h2> <%= @user.reviews.count %></h2>
       </div>
       <div>
