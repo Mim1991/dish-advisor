@@ -1,4 +1,14 @@
 // Specific CSS for your home-page
+.Desktop-message {
+  margin-top: 300px;
+  text-align: center;
+  color: $my-green;
+}
+
+.Desktop-message2 {
+  text-align: center;
+  color: $my-green;
+}
 .search-container {
   margin: auto !important;
   width: 80%;
@@ -21,18 +31,17 @@
 }
 
 #dish-button{
-  margin-top: 6px;
+  margin-top: 6px !important;
   color: $my-yellow;
-  font-weight: 600;
   font-style:normal;
 }
 
 #restaurant-button{
   margin-top: 6px;
   color: $my-yellow;
-  font-weight: 600;
   font-style: normal;
 }
+
 
 .small-button {
   width: 10px !important;

@@ -64,3 +64,69 @@
   letter-spacing: 1px;
   color: white;
 }
+
+.form-actions {
+  width: 100%;
+  // margin-left: auto !important;
+  // margin-right: auto !important;
+  margin-bottom: 30px;
+  border: none;
+  background-color: $my-green;
+  font-family: $headers-font;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+.form-actions input {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  padding: 3px;
+  }
+
+.login {
+  width: 87%;
+  border: none;
+  background-color: $my-green;
+  font-family: $headers-font;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-decoration: none;
+  height: 40px;
+  text-align: center;
+}
+
+.login a{
+  color: $white !important;
+  font-size: 14px;
+}
+
+.sign-up-centering{
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.forgot {
+  width: 300px;
+  border: none;
+  background-color: #d1ccbc;
+  font-family: $headers-font;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding-bottom: 3px;
+  text-decoration: none;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 30px;
+  height: 24px;
+  text-align: center;
+}
+
+.forgot a{
+  color: black !important;
+  font-size: 12px;
+}

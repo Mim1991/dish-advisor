@@ -4,11 +4,15 @@
 # meta_product_name: "Dish Advisor"
 # meta_title: "Dish Advisor - Review your Meal"
 # meta_description: "Review your meal so that friends can have a great experience."
-# meta_image: "brooke-lark-wMzx2nBdeng-unsplashcopy.jpg" # should exist in `app/assets/images/`
 
 meta_product_name: "Dish Advisor"
 meta_title: "Dish Advisor - The right choice for your palate"
 meta_description: "Use Dish Advisor to fine best dishes on a menu and eliminate food envy for good"
+
 meta_image: "app/assets/images/prova4_edabxx.jpg" # should exist in `app/assets/images/`
 #meta_image: "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606846557/logook_xsnhrb.jpg" # should exist in `app/assets/images/`
 
+
+
+# meta_image: "logoandwriteok2.png" # should exist in `app/assets/images/`
+# meta_image: "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606846557/logook_xsnhrb.jpg" # should exist in `app/assets/images/`

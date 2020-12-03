@@ -37,10 +37,13 @@
 
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <div style="padding-top: 15px">
-    </div>
-    <%= yield %>
+    <% if request.user_agent =~ /Mobile|webOS/ %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    <% else %>
+      <h1 class="Desktop-message">Welcome to Dish Advisor</h1>
+      <p class="Desktop-message2">we are best enjoyed on mobile</p>
+    <% end %>
   </body>
 </html>
