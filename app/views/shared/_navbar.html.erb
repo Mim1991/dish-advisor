@@ -16,12 +16,15 @@
         <li class="nav-item active">
           <%= link_to "All Restaurants", restaurants_path, class: "nav-link" %>
         </li>
+        <div class="nav-seperate"></div>
         <li class="nav-item active">
           <%= link_to "Discover Near Me", discover_path, class: "nav-link" %>
         </li>
+        <div class="nav-seperate"></div>
         <li class="nav-item">
           <%= link_to "Your Profile", user_favourites_path(current_user), class: "nav-link" %>
         </li>
+        <div class="nav-seperate"></div>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
