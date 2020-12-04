@@ -23,6 +23,7 @@ class PagesController < ApplicationController
     @coordinates = [@user_location['latitude'], @user_location['longitude']]
     # @coordinates = [51.529, -0.06]
     @restaurants = Restaurant.near(@coordinates, 10)
+    @picked = Dish.find(14)
     @dishes = @restaurants.map { |r| r.dishes }.flatten
     @markers = @restaurants.geocoded.map do |restaurant|
       {
