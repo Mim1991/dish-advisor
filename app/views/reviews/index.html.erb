@@ -57,28 +57,28 @@
       <% else  %>
         <div class="dish-card box-shadow-card individual-review" id="<%= review.dish.name.parameterize %>">
       <% end %>
-        <div class="dish-name-link text-center">
-          <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %>
-        </div>
-        <div class="dish-description">
-          <p><%= review.dish.restaurant.name.upcase %></p>
-        </div>
-        <div class="dish-description">
-          <p><%= review.content %></p>
-        </div>
-        <div class="dish-rating-icons-size">
-          <p id="rating-margin"><%="🍴" * review.rating %></p>
-        </div>
-        <p class="review-visit date-visit-padding"><%= review.created_at.strftime("%b %d, %Y") %></p>
-        <div class="favourite-button-links">
-          <%= link_to review_path(review), method: :delete, remote:true, class: "link" do %>
-              <i class="far fa-trash-alt"></i>
+          <div class="dish-name-link text-center">
+            <%= link_to review.dish.name.upcase, restaurant_path(review.dish.restaurant.id, anchor: "#{review.dish.name.parameterize}") %>
+          </div>
+          <div class="dish-description">
+            <p><%= review.dish.restaurant.name.upcase %></p>
+          </div>
+          <div class="dish-description">
+            <p><%= review.content %></p>
+          </div>
+          <div class="dish-rating-icons-size">
+            <p id="rating-margin"><%="🍴" * review.rating %></p>
+          </div>
+          <p class="review-visit date-visit-padding"><%= review.created_at.strftime("%b %d, %Y") %></p>
+          <div class="heart-position">
+            <%= link_to dish_favourites_path(review.dish), method: :post, remote:true, class: "link" do%>
+              <i class="far fa-heart margin-heart"></i>
+            <% end %>
+          </div>
           <% end %>
         </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+        </div>
+    </div>
 <% end %>
 
 
