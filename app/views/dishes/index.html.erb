@@ -26,3 +26,39 @@
   <% end %>
 </div>
 
+<!-- <h1 class="text-center rest-name-show"><%= @restaurant.name.upcase %> </h1>
+
+<div class="restaurant-dish-grid">
+  <% @restaurant.top_review.each do |dish| %>
+    <% if @restaurant.most_reviewed.id == dish.id && !dish.critic_choice.empty? %>
+      <div class="dish-card box-shadow-card individual-review most-reviews-dish critics-choice-dish" id="<%= dish.name.parameterize %>">
+    <% elsif @restaurant.most_reviewed.id == dish.id %>
+      <div class="dish-card box-shadow-card individual-review most-reviews-dish" id="<%= dish.name.parameterize %>">
+    <% elsif !dish.critic_choice.empty? %>
+      <div class="dish-card box-shadow-card individual-review critics-choice-dish" id="<%= dish.name.parameterize %>">
+    <% else  %>
+      <div class="dish-card box-shadow-card individual-review" id="<%= dish.name.parameterize %>">
+    <% end %>
+    <div class="dish-name text-center">
+      <h2><%= dish.name %></h2>
+    </div>
+    <div class="dish-allergen">
+      <p><%= dish.allergen %></p>
+    </div>
+    <div class="dish-description">
+      <p><%= dish.description %></p>
+    </div>
+    <div class="dish-average-rating">
+
+      <% if dish.average_review.zero? %>
+        <p class="no-reviews">NO REVIEWS</p>
+      <% else %>
+        <%= dish.average_review.round(1) %>
+      <% end %>
+    </div>
+    <div class="dish-rating-icons-size">
+      <p id="rating-margin"><%="🍴" * dish.average_review%></p>
+    </div>
+    <div class="dish-review-link">
+      <%= link_to "REVIEW", new_dish_review_path(dish)%>
+    </div> -->
