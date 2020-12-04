@@ -37,9 +37,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
@@ -63,9 +64,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
@@ -89,9 +91,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
@@ -115,9 +118,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
@@ -141,9 +145,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
@@ -167,9 +172,10 @@ trackUserLocation: true
         <% @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
-              <div class="dashboard-infos carousel-margin" id="fav-infos">
+              <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                  <div><%= dish.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
                     <p><%= "🍴" * dish.average_review %></p>
                   </div>
