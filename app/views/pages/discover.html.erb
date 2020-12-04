@@ -121,31 +121,31 @@ trackUserLocation: true
     </div>
     <div class="carousel-item">
       <div class="row" id="dashboard-row">
-        <% @dishes.sample(1).each do |dish| %>
+        <%# @dishes.sample(1).each do |dish| %>
           <div class="col-sm-12">
             <div class="dashboard-card">
               <div class="dashboard-infos carousel-margin center-carousel" id="fav-infos">
                 <div class="dish-title centering-text">
                   <div class="caro-bord">
-                    <%= link_to dish.name.upcase, restaurant_path(dish.restaurant.id, anchor: "#{dish.name.parameterize}") %>
+                    <%= link_to @picked.name.upcase, restaurant_path(@picked.restaurant.id, anchor: "#{@picked.name.parameterize}") %>
                   </div>
-                  <div class="name-carousel"><%= dish.restaurant.name.upcase %></div>
+                  <div class="name-carousel"><%= @picked.restaurant.name.upcase %></div>
                   <div class=“dish-rating-icons-size”>
-                    <p style="font-size: 25px"><%= "🍴" * dish.average_review %></p>
+                    <p style="font-size: 25px"><%= "🍴" * @picked.average_review %></p>
                   </div>
                 </div>
                 <div class="dish-description centering-text">
-                  <p><%= dish.description %></p>
+                  <p><%= @picked.description %></p>
                 </div>
                   <div class="heart-position">
-                  <%= link_to dish_favourites_path(dish), method: :post, remote:true, class: "link" do%>
+                  <%= link_to dish_favourites_path(@picked), method: :post, remote:true, class: "link" do%>
                     <i class="far fa-heart"></i>
                   <% end %>
                   </div>
               </div>
             </div>
           </div>
-        <% end %>
+        <%# end %>
       </div>
     </div>
     <div class="carousel-item">
