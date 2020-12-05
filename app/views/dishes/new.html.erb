@@ -1,0 +1,16 @@
+<div class="review-container">
+  <h4 class="review-head">ADD A DISH</h4>
+  <h4 class="review-name"> <%= @restaurant.name.upcase %></h4>
+  <!-- simple form to create a review for a dish -->
+  <%= simple_form_for [@restaurant, @dish] do |f| %>
+    <%= f.input :name, label: "Name" %>
+    <%= f.input :description, label: "Description" %>
+    <div class="d-flex align-items-center justify-content-between", id="button-centering">
+      <%= f.submit class: 'btn btn-primary', id: 'form-button' %>
+      <div class="back-button">
+        <%= link_to "Back", restaurant_path(@restaurant) %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

@@ -72,6 +72,11 @@
   list-style: none
 }
 
+.restaurant-data li {
+  overflow-wrap: break-word;
+}
+
+
 #map {
   margin-left: auto;
   position: relative !important;
