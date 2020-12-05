@@ -497,7 +497,7 @@ rest = JSON.parse(rest_serialized)
 
 num = 0
 
-while num < 23
+while num < 23000
   restaurant = Restaurant.new(
     name: rest[num]['name'],
     address: rest[num]['address'],
