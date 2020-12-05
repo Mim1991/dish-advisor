@@ -48,13 +48,19 @@
       <% end %>
     </div>
 
+    <%= link_to new_restaurant_path do%>
+    <div class="dish-card box-shadow-card individual-review mx-auto mt-3 new-dish">
+      <h1>+</h1>
+    </div>
+    <% end %>
+
     <% @restaurants.each_with_index do |restaurant, index| %>
     <% if index < 21 %>
       <%= link_to restaurant_path(restaurant) do %>
         <div class="restaurant-card individual-review box-shadow-card">
           <div class="restaurant-image">
             <% if restaurant.photo.attached? %>
-              <%= image_tag(restaurant.photo) %>
+              <%= cl_image_tag(restaurant.photo.key) %>
             <% else %>
               <%= cl_image_tag("Bao_ffjdtz") %>
             <% end %>

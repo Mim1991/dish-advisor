@@ -1,0 +1,22 @@
+<div class="review-container">
+  <h4 class="review-head">ADD A RESTAURANT</h4>
+  <!-- simple form to create a review for a dish -->
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name, label: "Name" %>
+    <%= f.input :cuisine, label: "Cuisine" %>
+    <%= f.input :address, label: "Address" %>
+    <%= f.input :website, label: "Website" %>
+    <%= f.input :phone_number, label: "Phone Number" %>
+    <%= f.input :photo,
+                as: :file,
+                required: false,
+                input_html: { autocomplete: "profile-picture" } %>
+    <div class="d-flex align-items-center justify-content-between", id="button-centering">
+      <%= f.submit class: 'btn btn-primary', id: 'form-button' %>
+      <div class="back-button">
+        <%= link_to "Back", restaurants_path %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
