@@ -22,3 +22,18 @@ body, html {
   height: 3px;
   background-color: #dbbab43d;
 }
+
+.new-dish{
+  border-radius: 55px;
+  height: 50px;
+  padding: 0;
+  color: $my-yellow;
+}
+
+.new-dish a{
+  color: $my-yellow;
+}
+
+a:hover {
+  text-decoration: none;
+}

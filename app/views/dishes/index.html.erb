@@ -25,6 +25,166 @@
         <div class="dish-review-link">
           <%= link_to "REVIEW", new_dish_review_path(dish)%>
         </div>
+
+        <div class="modal-box-total modal-box-border display-none">
+        <div class="modal-box">
+
+          <div class="rating-overview text-center" style="width: 100%">
+            <div class="close-modal">
+              <h1>X</h1>
+            </div>
+            <h5 class="dish-name-popup"><%= dish.name.upcase %></h5>
+            <p class="dish-description-popup"><%= dish.description %></p>
+          </div>
+          <div class="rating-content-scores">
+            <% if dish.reviews.count == 0  %>
+              <h5><em>No Reviews Yet</em></h5>
+            <% else %>
+            <div class="review-heading">
+              <h5>REVIEWS (<span id="review-count-select"><%= dish.reviews.count %></span>)</h5>
+            </div>
+            <div class="stars-container">
+              <div class="number-stars">
+                <p>5 🍴</p>
+                <div class="bar-container">
+                  <div class="bar-colour" id="five-colour"></div>
+                </div>
+                <div class="rating-count-star">
+                  <% five_array = [] %>
+                  <% dish.reviews.each do |review|  %>
+                    <% if review.rating == 5  %>
+                      <% five_array << review %>
+                    <% end %>
+                  <% end %>
+                  <%= five_array.count %>
+                </div>
+              </div>
+              <div class="number-stars">
+                <p>4 🍴</p>
+                <div class="bar-container">
+                  <div class="bar-colour" id="four-colour"></div>
+                </div>
+                <div class="rating-count-star">
+                  <% four_array = [] %>
+                  <% dish.reviews.each do |review|  %>
+                    <% if review.rating == 4  %>
+                      <% four_array << review %>
+                    <% end %>
+                  <% end %>
+                  <%= four_array.count %>
+                </div>
+              </div>
+              <div class="number-stars">
+                <p>3 🍴</p>
+                <div class="bar-container">
+                  <div class="bar-colour" id="three-colour"></div>
+                </div>
+                <div class="rating-count-star">
+                  <% three_array = [] %>
+                  <% dish.reviews.each do |review|  %>
+                    <% if review.rating == 3  %>
+                      <% three_array << review %>
+                    <% end %>
+                  <% end %>
+                  <%= three_array.count %>
+                </div>
+              </div>
+              <div class="number-stars">
+                <p>2 🍴</p>
+                <div class="bar-container">
+                  <div class="bar-colour" id="two-colour"></div>
+                </div>
+                <div class="rating-count-star">
+                  <% two_array = [] %>
+                  <% dish.reviews.each do |review|  %>
+                    <% if review.rating == 2  %>
+                      <% two_array << review %>
+                    <% end %>
+                  <% end %>
+                  <%= two_array.count %>
+                </div>
+              </div>
+              <div class="number-stars">
+                <p>1 🍴</p>
+                <div class="bar-container">
+                  <div class="bar-colour" id="one-colour"></div>
+                </div>
+                <div class="rating-count-star">
+                  <% one_array = [] %>
+                  <% dish.reviews.each do |review|  %>
+                    <% if review.rating == 1  %>
+                      <% one_array << review %>
+                    <% end %>
+                  <% end %>
+                  <%= one_array.count %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          </div>
+
+          <div class="review-list">
+            <% dish.reviews.reverse.each do |review| %>
+            <!-- if user is critic do -->
+              <% if review.user.critic? %>
+                <div class="review-margin individual-review box-shadow-card critic-review">
+              <% else %>
+                <div class="review-margin individual-review box-shadow-card">
+              <% end %>
+              <% if review.user.critic? %>
+                <div class="critics-choice-position critic-tag-small"><p><i class="fas fa-pen-nib" id="flag-colour-size"></i>Critic</p></div>
+              <% end %>
+              <div class="review-user">
+                <div class="title-positioning">
+                  <%= link_to user_reviews_path(review.user) do %>
+                    <% if review.user.photo.attached? %>
+                      <%= cl_image_tag(review.user.photo.key, crop: :thumb, gravity: :face, class: "avatar") %>
+                    <% else %>
+                      <%= image_tag "https://res.cloudinary.com/dh6gdchfj/image/upload/v1606750645/blank-profile-picture.png", class: "avatar"%>
+                    <% end %>
+                  <% end %>
+                  <p class="review-name"><%= link_to user_reviews_path(review.user) do %>
+                    <%= review.user.first_name.upcase %> <%= review.user.last_name.upcase %>
+                  <% end %>
+                  </p>
+                </div>
+                <p class="review-nationality"><%= review.user.find_emoji %></p>
+              </div>
+              <div class="review-body">
+                <div class="star-visit">
+                  <p class="review-rating"><%= "🍴" * review.rating.to_i %></p>
+                  <% if ((Date.today - review.visit_date).to_i) <= 1 %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> day since visit </p>
+                  <% elsif ((Date.today - review.visit_date).to_i / 7) < 1 %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i %> days since visit </p>
+                  <% else %>
+                    <p class="date-since-visit"><%= (Date.today - review.visit_date).to_i / 7 %> weeks since visit </p>
+                  <% end %>
+                </div>
+                <p class="review-title"><%= review.title%></p>
+                <p class="review-content"><%= review.content %></p>
+                <p class="review-visit"><span>Review Date -  </span> <%= review.created_at.strftime("%b %d, %Y") %></p>
+              </div>
+            </div>
+            <div class="seperator-clear seperator seperator-center "></div>
+            <% end %>
+          </div>
+          <div class="margin-bottom-pad"></div>
+
+          <div class="fave-button">
+            <% dish_array = [] %>
+            <% @favourite_dishes.each do |favourite| %>
+              <% dish_array << favourite.dish.id %>
+            <% end %>
+            <% if dish_array.include? dish.id %>
+              <p class="black">ADDED</p>
+
+            <% else %>
+              <%= link_to "FAVOURITE", dish_favourites_path(dish), class: "link-select" ,method: :post, remote:true %>
+            <% end %>
+          </div>
+        </div>
+      </div>
       </div>
   <% end %>
 </div>

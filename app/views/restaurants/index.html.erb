@@ -39,7 +39,17 @@
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-    <% @restaurants.each do |restaurant| %>
+
+    <div class="restaurant-name text-center" style="color:#516360">
+      <% if @restaurants.count > 21 %>
+        <p style="border-bottom: none">Showing <span>20</span> Restaurants</p>
+      <% else %>
+        <p style="border-bottom: none">Showing <span><%= pluralize((@restaurants.count), "Restaurant") %></span></p>
+      <% end %>
+    </div>
+
+    <% @restaurants.each_with_index do |restaurant, index| %>
+    <% if index < 21 %>
       <%= link_to restaurant_path(restaurant) do %>
         <div class="restaurant-card individual-review box-shadow-card">
           <div class="restaurant-image">
@@ -63,9 +73,11 @@
           </div>
         </div>
       <% end %>
-      <div class="border-rest-card">
-      </div>
-      <% end %>
+      <%# index += 1 %>
+    <% end %>
+    <div class="border-rest-card">
+    </div>
+  <% end %>
   <% end %>
  </div>
  </div>

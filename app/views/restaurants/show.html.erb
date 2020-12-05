@@ -1,6 +1,12 @@
 
 <h1 class="text-center rest-name-show"><%= @restaurant.name.upcase %> </h1>
 
+<%= link_to new_restaurant_dish_path(@restaurant) do%>
+  <div class="dish-card box-shadow-card individual-review mx-auto mt-3 new-dish">
+      <h1>+</h1>
+  </div>
+<% end %>
+
 <div class="restaurant-dish-grid">
   <% @restaurant.top_review.each do |dish| %>
     <% if @restaurant.most_reviewed.id == dish.id && !dish.critic_choice.empty? %>
