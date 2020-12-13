@@ -23,3 +23,4 @@
 </p>
 
 <p align="center"> Dish Advisor was created by <a href="https://github.com/Mim1991">Meehir</a>, <a href="https://github.com/Jecacueca">Jess</a> and <a href="https://github.com/ChiaraAgazzi">Chiara</a>!</p> 
+ 
