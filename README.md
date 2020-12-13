@@ -22,4 +22,4 @@
   <img width="15%" heigh="30%" src="https://res.cloudinary.com/dczzzghtt/image/upload/v1607789015/Screenshot_2020-12-12_at_16.00.51_nedxhv.png">
 </p>
 
-<p align="center"> Dish Advisor was created by <a href="https://github.com/Mim1991">Meehir</a>, <a href="https://github.com/Jecacueca">Jess</a> and <a href="https://github.com/ChiaraAgazzi">Chiara</a>!</p>
+<p align="center"> Dish Advisor was created by <a href="https://github.com/Mim1991">Meehir</a>, <a href="https://github.com/Jecacueca">Jess</a> and <a href="https://github.com/ChiaraAgazzi">Chiara</a>!</p> 
